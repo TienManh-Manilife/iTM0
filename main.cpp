@@ -1,14 +1,14 @@
+#define SDL_MAIN_HANDLED
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "player.h"
 #include "dichuyen.h"
 
 using namespace std;
 
 const int S_W = 800;
 const int S_H = 600;
-const int
+const int SP = 2;
 
 int main(int argc, char* argv[])
 {
@@ -17,10 +17,10 @@ int main(int argc, char* argv[])
     SDL_Window* window = SDL_CreateWindow("WINDOW", 100, 200, 800, 600, SDL_WINDOW_SHOWN);
     SDL_Renderer* renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
     IMG_Init(IMG_INIT_PNG);
-    SDL_Texture* texture = IMG_LoadTexture(renderer,"image.png");
+    SDL_Texture* texture = IMG_LoadTexture(renderer,"Than_Nam.png");
     int w, h;
     SDL_QueryTexture(texture,NULL,NULL,&w, &h);
-    SDL_Rect rect = {400,300,w*0.1,h*0.1};
+    SDL_Rect rect = {400,300,w*0.2,h*0.2};
     bool run = 1;
     SDL_Event event;
     while(run==1)

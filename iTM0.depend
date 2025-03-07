@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1741364460 source:d:\file codeblock\itm0\dichuyen.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"dichuyen.h"
+
+1741363673 d:\file codeblock\itm0\dichuyen.h
+
+1741364237 source:d:\file codeblock\itm0\main.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"dichuyen.h"
+
