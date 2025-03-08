@@ -29,10 +29,16 @@ int main(int argc, char* argv[])
     // Nhan vat
     const int nhanvat_w = 73, nhanvat_h = 85;
     int frame_now = 0;
-    const int totalFrames = 8;
+    int totalFrames = 6;
     Uint32 lastFrameTime = 0;
     const int frameDelay = 100;
-    SDL_Texture* texture_nhanvat = IMG_LoadTexture(renderer,"nvdungyen.png");
+    SDL_Texture* texture_nvdungyen = IMG_LoadTexture(renderer,"nvdungyen.png");
+    SDL_Texture* texture_nvdibo = IMG_LoadTexture(renderer, "nvdibo.png");
+    SDL_Texture* texture_nvchet = IMG_LoadTexture(renderer, "nvdibo.png");
+    SDL_Texture* texture_nvbungno = IMG_LoadTexture(renderer, "nvdibo.png");
+    SDL_Texture* texture_nvnhay = IMG_LoadTexture(renderer, "nvdibo.png");
+    SDL_Texture* texture_nvtancong = IMG_LoadTexture(renderer, "nvdibo.png");
+    bool isMoving = 0;
 
     bool run = 1;
     SDL_Event event;
@@ -44,13 +50,16 @@ int main(int argc, char* argv[])
             {
                 run = 0;
             }
+            nvdichuyenphai(event, isMoving);
         }
+
+    SDL_Texture* current_texture = isMoving ? texture_nvdibo : texture_nvdungyen;
 
     Uint32 currentTime = SDL_GetTicks();
 
     if (currentTime > lastFrameTime + frameDelay)
     {
-        frame_now = (frame_now + 1) % 6;
+        frame_now = (frame_now + 1) % totalFrames;
         lastFrameTime = currentTime;
     }
 
@@ -61,15 +70,15 @@ int main(int argc, char* argv[])
     SDL_RenderClear(renderer);
 
     SDL_RenderCopy(renderer, texture_anhnen, &camera, &renderQuad_manhinh);
+
+    SDL_RenderCopy(renderer, current_texture, &rectframe_nhanvat, &renderQuad_nhanvat);
     SDL_RenderPresent(renderer);
 
-    SDL_RenderCopy(renderer, texture_nhanvat, &rectframe_nhanvat, &renderQuad_nhanvat);
-    SDL_RenderPresent(renderer);
-
-    SDL_Delay(10);
+    SDL_Delay(100);
     }
 
-    SDL_DestroyTexture(texture_nhanvat);
+    SDL_DestroyTexture(texture_nvdungyen);
+    SDL_DestroyTexture(texture_nvdibo);
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
