@@ -14,17 +14,14 @@ void hanhdong(SDL_Event &event, int &trangthai)
             case SDLK_a:
                 trangthai = 2;
                 break;
-            case SDLK_d:
+            case SDLK_w:
                 trangthai = 3;
                 break;
-            case SDLK_w:
+            case SDLK_d:
                 trangthai = 4;
                 break;
-            case SDLK_s:
-                trangthai = 5;
-                break;
             case SDLK_SPACE:
-                trangthai = 6;
+                trangthai = 5;
                 break;
         }
     }
@@ -39,13 +36,70 @@ void hanhdong(SDL_Event &event, int &trangthai)
     }
 }
 
-void chontexture(int &trangthai,
-                 SDL_Texture* texture_nvdungyen,
-                 SDL_Texture* texture_nvdibo,
-                 SDL_Texture* texture_nvbungno,
-                 SDL_Texture* texture_nvnhay,
-                 SDL_Texture* texture_nvtancong,
-                 SDL_Texture* texture_thannam,
-                 SDL_Texture* texture_thannu)
+void chontexture(int &trangthai, SDL_Texture* texture_nvdungyen,
+                 SDL_Texture* texture_nvdibo, SDL_Texture* texture_nvbungno,
+                 SDL_Texture* texture_nvnhay, SDL_Texture* texture_nvtancong,
+                 SDL_Texture* texture_thannam, SDL_Texture* texture_thannu,
+                 int &totalFrames, int &SP, const int frameDelay,
+                 Uint32 currentTime, int nhanvat_h, SDL_Rect &toadonhanvat,
+                 SDL_Rect &catnhanvat, Uint32 lastFrameTime, SDL_Renderer* renderer,
+                 SDL_Texture* texture_anhnen, SDL_Rect catnen, SDL_Rect toadonen,
+                 SDL_Texture* texture_now, int frame_now, const int S_W, const int S_H)
 {
+    if (trangthai == 1)
+    {
+        totalFrames = 6;
+        if (currentTime > lastFrameTime + frameDelay)
+        {
+            frame_now = (frame_now + 1) % totalFrames;
+            lastFrameTime = currentTime;
+        }
+        // Nhan vat dung yen
+        catnhanvat = { frame_now * 73, 0, 73, nhanvat_h};
+        toadonhanvat = { S_W/2 - 73, S_H - nhanvat_h - 145, 73*2, nhanvat_h*2 };
+        // Khung hinh dung yen
+        SDL_RenderClear(renderer);
+        SDL_RenderCopy(renderer, texture_anhnen, &catnen, &toadonen);
+        SDL_RenderCopy(renderer, texture_now, &catnhanvat, &toadonhanvat);
+    }
+
+    else if(trangthai == 2)
+    {
+        totalFrames = 8;
+        // Nhan vat di chuyen sang trai
+        // Khung hinh di chuyen sang trai
+    }
+
+    else if (trangthai == 3)
+    {
+        totalFrames = 8;
+        //Nhan vat nhay
+        // Khung hinh di chuyen len tren
+    }
+
+    else if (trangthai == 4)
+    {
+        totalFrames = 8;
+        // Nhan vat di chuyen sang phai
+        // Khung hinh di chuyen len tren
+    }
+
+    else if (trangthai == 5)
+    {
+        totalFrames = 3;
+        // Nhan vat bung no
+        // Render anh bung no
+    }
+
+    else if (trangthai == 6)
+    {
+        //Nhan vat tan cong
+        // Khung hinh dung yen
+    }
+
+    else if (trangthai == 7)
+    {
+        //Nhan vat chet
+        //Cap nhat khung hinh Menu
+    }
 }

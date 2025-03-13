@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     // Camera và ảnh nền:
     SDL_Texture* texture_anhnen = IMG_LoadTexture(renderer,"nen.png");
     SDL_QueryTexture(texture_anhnen,NULL, NULL, &nen_w, &nen_h);
-    int x=0, y=nen_h - S_H*2
+    int x=0, y=nen_h - S_H*2;
     SDL_Rect catnen = {y, x, S_W*2, S_H*2};
     SDL_Rect toadonen = { 0, 0, S_W, S_H };
     SDL_RenderCopy(renderer, texture_anhnen, &catnen, &toadonen);
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
     int trangthai = 1;
 
     // Nhân vật và các hành động:
-    const int nhanvat_w = 73, nhanvat_h = 85;
+    const int nhanvat_h = 85;
     int frame_now = 0;
     int totalFrames = 6;
     Uint32 lastFrameTime = 0;
@@ -48,9 +48,6 @@ int main(int argc, char* argv[])
     //Yêu quái:
 
 
-    //Sói:
-
-
     //Boss:
 
     // Vòng lặp sự kiện:
@@ -63,23 +60,18 @@ int main(int argc, char* argv[])
             if (event.type == SDL_QUIT) run = 0;
             hanhdong(event,trangthai);
         }
-
-
     Uint32 currentTime = SDL_GetTicks();
-
-    if (currentTime > lastFrameTime + frameDelay)
-    {
-        frame_now = (frame_now + 1) % totalFrames;
-        lastFrameTime = currentTime;
-    }
-
     SDL_Texture* texture_now;
+    SDL_Rect toadonhanvat;
+    SDL_Rect catnhanvat;
 
-    SDL_Rect rectframe_nhanvat = { frame_now * nhanvat_w, 0, nhanvat_w, nhanvat_h };
-    SDL_Rect renderQuad_nhanvat = { S_W/2 - nhanvat_w, S_H - nhanvat_h - 145, nhanvat_w*2, nhanvat_h*2 };
-    SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, texture_anhnen, &camera, &renderQuad_manhinh);
-    SDL_RenderCopy(renderer, current_texture, &rectframe_nhanvat, &renderQuad_nhanvat);
+    //Vi tri ham
+    chontexture(trangthai, texture_nvdungyen, texture_nvdibo, texture_nvbungno,
+                 texture_nvnhay, texture_nvtancong, texture_thannam, texture_thannu,
+                 totalFrames, SP, frameDelay, currentTime, nhanvat_h, toadonhanvat,
+                 catnhanvat, lastFrameTime, &renderer, texture_anhnen, catnen, toadonen,
+                 &texture_now, frame_now, S_W, S_H);
+
     SDL_RenderPresent(renderer);
     SDL_Delay(100);
     }
