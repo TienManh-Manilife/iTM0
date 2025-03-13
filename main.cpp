@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     SDL_Texture* texture_anhnen = IMG_LoadTexture(renderer,"nen.png");
     SDL_QueryTexture(texture_anhnen,NULL, NULL, &nen_w, &nen_h);
     int x=0, y=nen_h - S_H*2;
-    SDL_Rect catnen = {y, x, S_W*2, S_H*2};
+    SDL_Rect catnen = {x, y, S_W*2, S_H*2};
     SDL_Rect toadonen = { 0, 0, S_W, S_H };
     SDL_RenderCopy(renderer, texture_anhnen, &catnen, &toadonen);
     SDL_RenderPresent(renderer);
@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
             if (event.type == SDL_QUIT) run = 0;
             hanhdong(event,trangthai);
         }
-    Uint32 currentTime = SDL_GetTicks();
+    wUint32 currentTime = SDL_GetTicks();
     SDL_Texture* texture_now;
     SDL_Rect toadonhanvat;
     SDL_Rect catnhanvat;
@@ -69,11 +69,10 @@ int main(int argc, char* argv[])
     chontexture(trangthai, texture_nvdungyen, texture_nvdibo, texture_nvbungno,
                  texture_nvnhay, texture_nvtancong, texture_thannam, texture_thannu,
                  totalFrames, SP, frameDelay, currentTime, nhanvat_h, toadonhanvat,
-                 catnhanvat, lastFrameTime, &renderer, texture_anhnen, catnen, toadonen,
-                 &texture_now, frame_now, S_W, S_H);
+                 catnhanvat, lastFrameTime, renderer, texture_anhnen, catnen, toadonen,
+                 texture_now, frame_now, S_W, S_H);
 
     SDL_RenderPresent(renderer);
-    SDL_Delay(100);
     }
 
     //Giải phóng bộ nhớ:

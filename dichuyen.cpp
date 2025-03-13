@@ -24,6 +24,7 @@ void hanhdong(SDL_Event &event, int &trangthai)
                 trangthai = 5;
                 break;
         }
+        else trangthai = 1;
     }
 
     else if (event.type == SDL_KEYUP) trangthai = 1;
@@ -40,14 +41,15 @@ void chontexture(int &trangthai, SDL_Texture* texture_nvdungyen,
                  SDL_Texture* texture_nvdibo, SDL_Texture* texture_nvbungno,
                  SDL_Texture* texture_nvnhay, SDL_Texture* texture_nvtancong,
                  SDL_Texture* texture_thannam, SDL_Texture* texture_thannu,
-                 int &totalFrames, int &SP, const int frameDelay,
-                 Uint32 currentTime, int nhanvat_h, SDL_Rect &toadonhanvat,
+                 int &totalFrames, const int &SP, const int frameDelay,
+                 Uint32 currentTime, const int nhanvat_h, SDL_Rect &toadonhanvat,
                  SDL_Rect &catnhanvat, Uint32 lastFrameTime, SDL_Renderer* renderer,
                  SDL_Texture* texture_anhnen, SDL_Rect catnen, SDL_Rect toadonen,
                  SDL_Texture* texture_now, int frame_now, const int S_W, const int S_H)
 {
     if (trangthai == 1)
     {
+        currentTime = SDL_GetTicks();
         totalFrames = 6;
         if (currentTime > lastFrameTime + frameDelay)
         {
@@ -60,7 +62,7 @@ void chontexture(int &trangthai, SDL_Texture* texture_nvdungyen,
         // Khung hinh dung yen
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, texture_anhnen, &catnen, &toadonen);
-        SDL_RenderCopy(renderer, texture_now, &catnhanvat, &toadonhanvat);
+        SDL_RenderCopy(renderer, texture_nvdungyen, &catnhanvat, &toadonhanvat);
     }
 
     else if(trangthai == 2)
