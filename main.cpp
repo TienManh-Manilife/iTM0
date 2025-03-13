@@ -13,18 +13,19 @@ const int SP = 2;
 int main(int argc, char* argv[])
 {
     // Khởi tạo:
-    SDL_Init(SDL_INIT_VIDEO);
-    SDL_Window* window = SDL_CreateWindow("WINDOW", 100, 200, 800, 600, SDL_WINDOW_SHOWN);
-    SDL_Renderer* renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
-    IMG_Init(IMG_INIT_PNG);
-    int nen_w, nen_h;
+    SDL_Init(SDL_INIT_VIDEO); //Checked
+    SDL_Window* window = SDL_CreateWindow("WINDOW", 100, 200, 800, 600, SDL_WINDOW_SHOWN); //Checked
+    SDL_Renderer* renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED); //Checked
+    IMG_Init(IMG_INIT_PNG); //Checked
+    int nen_w, nen_h; //Checked
 
     // Camera và ảnh nền:
     SDL_Texture* texture_anhnen = IMG_LoadTexture(renderer,"nen.png");
     SDL_QueryTexture(texture_anhnen,NULL, NULL, &nen_w, &nen_h);
-    SDL_Rect camera = {0, nen_h - 1200, S_W*2, S_H*2};
-    SDL_Rect renderQuad_manhinh = { 0, 0, S_W, S_H };
-    SDL_RenderCopy(renderer, texture_anhnen, &camera, &renderQuad_manhinh);
+    int x=0, y=nen_h - S_H*2
+    SDL_Rect catnen = {y, x, S_W*2, S_H*2};
+    SDL_Rect toadonen = { 0, 0, S_W, S_H };
+    SDL_RenderCopy(renderer, texture_anhnen, &catnen, &toadonen);
     SDL_RenderPresent(renderer);
     int trangthai = 1;
 
@@ -43,8 +44,14 @@ int main(int argc, char* argv[])
     SDL_Texture* texture_thannam = IMG_LoadTexture(renderer, "thannam.png");
     SDL_Texture* texture_thannu = IMG_LoadTexture(renderer, "thannu.png");
 
-    //Quái vật và các hành động:
+    //Địch:
+    //Yêu quái:
 
+
+    //Sói:
+
+
+    //Boss:
 
     // Vòng lặp sự kiện:
     bool run = 1;
