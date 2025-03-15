@@ -24,10 +24,9 @@ void hanhdong(SDL_Event &event, int &trangthai)
                 trangthai = 5;
                 break;
         }
-        else trangthai = 1;
     }
-
     else if (event.type == SDL_KEYUP) trangthai = 1;
+
     if (event.type == SDL_MOUSEBUTTONDOWN)
     {
         if (event.button.button == SDL_BUTTON_LEFT)

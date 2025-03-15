@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
             if (event.type == SDL_QUIT) run = 0;
             hanhdong(event,trangthai);
         }
-    wUint32 currentTime = SDL_GetTicks();
+    Uint32 currentTime = SDL_GetTicks();
     SDL_Texture* texture_now;
     SDL_Rect toadonhanvat;
     SDL_Rect catnhanvat;
