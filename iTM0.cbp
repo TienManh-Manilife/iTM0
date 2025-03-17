@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="dichuyen.cpp" />
 		<Unit filename="dichuyen.h" />
+		<Unit filename="khoitao.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

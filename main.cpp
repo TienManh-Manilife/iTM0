@@ -1,91 +1,72 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "dichuyen.h"
-#include <string>
 
 using namespace std;
 
-const int S_W = 800;
-const int S_H = 600;
+const int S_W = 1040;
+const int S_H = 780;
 const int SP = 2;
 
 int main(int argc, char* argv[])
 {
     // Khởi tạo:
-    SDL_Init(SDL_INIT_VIDEO); //Checked
-    SDL_Window* window = SDL_CreateWindow("WINDOW", 100, 200, 800, 600, SDL_WINDOW_SHOWN); //Checked
-    SDL_Renderer* renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED); //Checked
-    IMG_Init(IMG_INIT_PNG); //Checked
-    int nen_w, nen_h; //Checked
+    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Window* window = SDL_CreateWindow("iTM0",120, 20, S_W, S_H, SDL_WINDOW_SHOWN);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    SDL_Texture* nen = IMG_LoadTexture(renderer, "nen.png");
+    SDL_Texture* nv_chet = IMG_LoadTexture(renderer, "nvchet.png");
+    SDL_Texture* nv_dungyen = IMG_LoadTexture(renderer, "nvdungyen.png");
+    SDL_Texture* nv_tancong = IMG_LoadTexture(renderer, "nvtancong.png");
+    SDL_Texture* thannam = IMG_LoadTexture(renderer, "thannam.png");
+    SDL_Texture* thannu = IMG_LoadTexture(renderer, "thannu.png");
+    SDL_Texture* zombie_thuong = IMG_LoadTexture(renderer, "zombie_thuong.png");
+    SDL_Texture* zombie_nhayxa = IMG_LoadTexture(renderer, "zombie_nhayxa.png");
+    SDL_Texture* zombie_dabong = IMG_LoadTexture(renderer, "zombie_dabong.png");
+    SDL_Texture* zombie_mu = IMG_LoadTexture(renderer, "zombie_mu.png");
+    SDL_Texture* zombie_khoaitay = IMG_LoadTexture(renderer, "zombie_khoaitay.png");
+    SDL_Texture* zombie_canhcua = IMG_LoadTexture(renderer, "zombie_canhcua.png");
 
     // Camera và ảnh nền:
-    SDL_Texture* texture_anhnen = IMG_LoadTexture(renderer,"nen.png");
-    SDL_QueryTexture(texture_anhnen,NULL, NULL, &nen_w, &nen_h);
-    int x=0, y=nen_h - S_H*2;
-    SDL_Rect catnen = {x, y, S_W*2, S_H*2};
-    SDL_Rect toadonen = { 0, 0, S_W, S_H };
-    SDL_RenderCopy(renderer, texture_anhnen, &catnen, &toadonen);
-    SDL_RenderPresent(renderer);
-    int trangthai = 1;
+
 
     // Nhân vật và các hành động:
-    const int nhanvat_h = 85;
-    int frame_now = 0;
-    int totalFrames = 6;
-    Uint32 lastFrameTime = 0;
-    const int frameDelay = 100;
-    SDL_Texture* texture_nvdungyen = IMG_LoadTexture(renderer, "nvdungyen.png");
-    SDL_Texture* texture_nvdibo = IMG_LoadTexture(renderer, "nvdibo.png");
-    SDL_Texture* texture_nvchet = IMG_LoadTexture(renderer, "nvchet.png");
-    SDL_Texture* texture_nvbungno = IMG_LoadTexture(renderer, "nvbungno.png");
-    SDL_Texture* texture_nvnhay = IMG_LoadTexture(renderer, "nvnhay.png");
-    SDL_Texture* texture_nvtancong = IMG_LoadTexture(renderer, "nvtancong.png");
-    SDL_Texture* texture_thannam = IMG_LoadTexture(renderer, "thannam.png");
-    SDL_Texture* texture_thannu = IMG_LoadTexture(renderer, "thannu.png");
+    int nv_w, nv_h;
+    SDL_QueryTexture(nv_dungyen, NULL, NULL, &nv_w, &nv_h);
+    SDL_Rect rect_nv = {10,0, nv_w*2, nv_h*2};
 
-    //Địch:
-    //Yêu quái:
+    // Zombies thuong
+    int zombie_thuong_w, zombie_thuong_h;
+    SDL_QueryTexture(zombie_thuong, NULL, NULL, &zombie_thuong_w, &zombie_thuong_h);
+    SDL_Rect rect_zombie_thuong = {10,0, zombie_thuong_w*0.8, zombie_thuong_h*0.8};
 
 
-    //Boss:
+    SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, nen, NULL, NULL);
+    SDL_RenderCopy(renderer, zombie_thuong, NULL, &rect_zombie_thuong);
+    SDL_RenderCopy(renderer, nv_dungyen, NULL, &rect_nv);
+    SDL_RenderPresent(renderer);
 
     // Vòng lặp sự kiện:
     bool run = 1;
+    bool menu = 1;
     SDL_Event event;
-    while(run==1)
+    while(run)
     {
-        while(SDL_PollEvent(&event) != 0)
+        while (menu)
+        {
+
+        }
+
+        while(SDL_PollEvent(&event))
         {
             if (event.type == SDL_QUIT) run = 0;
-            hanhdong(event,trangthai);
         }
-    Uint32 currentTime = SDL_GetTicks();
-    SDL_Texture* texture_now;
-    SDL_Rect toadonhanvat;
-    SDL_Rect catnhanvat;
-
-    //Vi tri ham
-    chontexture(trangthai, texture_nvdungyen, texture_nvdibo, texture_nvbungno,
-                 texture_nvnhay, texture_nvtancong, texture_thannam, texture_thannu,
-                 totalFrames, SP, frameDelay, currentTime, nhanvat_h, toadonhanvat,
-                 catnhanvat, lastFrameTime, renderer, texture_anhnen, catnen, toadonen,
-                 texture_now, frame_now, S_W, S_H);
-
-    SDL_RenderPresent(renderer);
     }
 
-    //Giải phóng bộ nhớ:
-    SDL_DestroyTexture(texture_nvdungyen);
-    SDL_DestroyTexture(texture_nvdibo);
-    SDL_DestroyTexture(texture_nvchet);
-    SDL_DestroyTexture(texture_nvtancong);
-    SDL_DestroyTexture(texture_nvnhay);
-    SDL_DestroyTexture(texture_nvbungno);
-    SDL_DestroyWindow(window);
+    // Giải phóng bộ nhớ:
     SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
     SDL_Quit();
-    IMG_Quit();
-
     return 0;
 }
