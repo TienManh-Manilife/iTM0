@@ -22,6 +22,7 @@ using namespace std;
     const int S_W = 1040;
     const int S_H = 780;
     const int SP = 3;
+    Uint32 time = 0;
 
 bool initGraphics()
 {

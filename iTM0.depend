@@ -8,7 +8,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1742322745 source:d:\file codeblock\itm0\main.cpp
+1742529910 source:d:\file codeblock\itm0\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -30,17 +30,17 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1742323483 source:d:\file codeblock\itm0\graphics.cpp
+1742525646 source:d:\file codeblock\itm0\graphics.cpp
 	"graphics.h"
 	<iostream>
 
-1742323483 d:\file codeblock\itm0\graphics.h
+1742462759 d:\file codeblock\itm0\graphics.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
 1742317477 source:d:\file codeblock\itm0\musics.cpp
 
-1742320243 source:d:\file codeblock\itm0\move.cpp
+1742531375 source:d:\file codeblock\itm0\move.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -48,7 +48,7 @@
 	"move.h"
 	"musics.h"
 
-1742320243 d:\file codeblock\itm0\move.h
+1742530357 d:\file codeblock\itm0\move.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 

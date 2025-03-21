@@ -52,4 +52,6 @@ bool initGraphics();
 
 void cleanupGraphics();
 
+extern Uint32 time;
+
 #endif

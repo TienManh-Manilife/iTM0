@@ -18,10 +18,10 @@ int main(int argc, char* argv[])
     SDL_RenderPresent(renderer);
     bool play = 1;
 
-    // nen
-    int nen_w, nen_h;
+    // Nhan vat
+
+    // Nen
     SDL_QueryTexture(nen, NULL, NULL, &nen_w, &nen_h);
-    SDL_Rect rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
 
     // Vòng lặp sự kiện:
     bool run = 1;
@@ -46,12 +46,13 @@ int main(int argc, char* argv[])
         {
             while(SDL_PollEvent(&event))
             {
-                if (event.type == SDL_QUIT) run = 0;
+                capnhattrangthai (event, trangthai, run);
             }
-            SDL_RenderClear(renderer);
-            SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
+
+            hanhdongnhanvat();
+
             SDL_RenderPresent(renderer);
-            SDL_Delay(100);
+            SDL_Delay(20);
         }
     }
 
