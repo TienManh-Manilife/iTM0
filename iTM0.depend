@@ -8,10 +8,11 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1742529910 source:d:\file codeblock\itm0\main.cpp
+1742555650 source:d:\file codeblock\itm0\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
 	"graphics.h"
 	"move.h"
 	"musics.h"
@@ -30,27 +31,34 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1742525646 source:d:\file codeblock\itm0\graphics.cpp
+1742555680 source:d:\file codeblock\itm0\graphics.cpp
 	"graphics.h"
 	<iostream>
+	<SDL2/SDL_mixer.h>
+	"move.h"
 
-1742462759 d:\file codeblock\itm0\graphics.h
+1742555383 d:\file codeblock\itm0\graphics.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
 
 1742317477 source:d:\file codeblock\itm0\musics.cpp
 
-1742531375 source:d:\file codeblock\itm0\move.cpp
+1742555303 source:d:\file codeblock\itm0\move.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
 	"graphics.h"
 	"move.h"
 	"musics.h"
 
-1742530357 d:\file codeblock\itm0\move.h
+1742555303 d:\file codeblock\itm0\move.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
 
 1742317480 d:\file codeblock\itm0\musics.h
+
+1742554738 source:d:\file codeblock\itm0\ketqua.cpp
 

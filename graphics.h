@@ -1,8 +1,10 @@
+//24020220
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 
 extern SDL_Window* window;
 
@@ -22,7 +24,15 @@ extern SDL_Texture* zombie_canhcua;
 
 extern SDL_Texture* zombie_khoaitay;
 
+extern Mix_Music* nhacnen;
+
 extern SDL_Texture* zombie_nhayxa;
+
+extern SDL_Texture* danbungno;
+
+extern SDL_Texture* danthuong;
+
+extern SDL_Texture* anhbungno;
 
 extern SDL_Texture* thannam;
 
@@ -31,6 +41,8 @@ extern SDL_Texture* thannu;
 extern SDL_Texture* nv_chet;
 
 extern SDL_Texture* nv_tancong;
+
+extern SDL_Texture* nv_bungno;
 
 extern SDL_Texture* menu;
 
@@ -48,10 +60,14 @@ struct Mouse
 
 extern Mouse mouse;
 
+extern bool bool_time1;
+
+extern int play;
+
 bool initGraphics();
 
 void cleanupGraphics();
 
-extern Uint32 time;
+extern Uint32 time, time1;
 
 #endif

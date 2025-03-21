@@ -1,0 +1,6 @@
+#ifndef KETQUA_H_INCLUDED
+#define KETQUA_H_INCLUDED
+
+
+
+#endif // KETQUA_H_INCLUDED

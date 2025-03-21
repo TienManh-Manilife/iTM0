@@ -1,19 +1,25 @@
+//24020220
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 #include "graphics.h"
 #include "move.h"
 #include "musics.h"
 
-int trangthai = 0;
+int trangthai = 0, trangthai_zom = 0;
 
 int frame = 0;
 
-int nv_x = 10, nv_y = 0, nv_w = 0;
+int dan_x = 0, dan_y = 0;
+
+int nv_x = 30, nv_y = 0, nv_w = 0;
 
 SDL_Rect rect_nv = {nv_x, nv_y, nv_w, 85};
 
 SDL_Rect rect_cat_nv = {0, 0, nv_w, 85};
+
+SDL_Rect rect_anh = {nv_x, nv_y, nv_w, 85};
 
 int nen_w, nen_h;
 
@@ -39,7 +45,7 @@ void capnhattrangthai (SDL_Event &event, int &trangthai, bool &run)
         {
             trangthai = 3; // Bung no
         }
-        else trangthai = 1;
+        else trangthai = 0;
         break;
     case SDL_MOUSEBUTTONDOWN:
         if (event.button.button == SDL_BUTTON_LEFT)
@@ -55,6 +61,7 @@ void hanhdongnhanvat ()
 {
     switch (trangthai)
     {
+        //Dung yen
     case 0:
         if (SDL_GetTicks() - time >= 100)
         {
@@ -69,23 +76,89 @@ void hanhdongnhanvat ()
         SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
         SDL_RenderCopy(renderer, nv_dungyen, &rect_cat_nv, &rect_nv);
         break;
+
+        //Di chuyen len
     case 1:
         if (nv_y >= 50)nv_y -= 150;
         trangthai = 0;
         break;
+
+        //Di chuyen xuong
     case 2:
         if (nv_y < 600)nv_y += 150;
         trangthai = 0;
         break;
-    case 3:
-        break;
-    case 4:
 
+        //Bung no
+    case 3:
+
+        if (SDL_GetTicks() - time >= 300)
+        {
+            frame = (frame+1)%3;
+            time = SDL_GetTicks();
+        }
+
+        rect_cat_nv = {frame*80, 0, 80, 85};
+        nv_w = 80;
+        rect_nv = {nv_x, nv_y, nv_w*2, 145};
+        rect_anh = {nv_x, nv_y, nv_w*2, 145};
+        SDL_RenderClear(renderer);
+        rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
+        SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
+        SDL_RenderCopy(renderer, anhbungno, NULL, &rect_anh);
+        SDL_RenderCopy(renderer, nv_bungno, &rect_cat_nv, &rect_nv);
+        break;
+
+        //Tan cong ________________________________________________________________________________________________________________
+    case 4:
+        if (SDL_GetTicks() - time >= 300)
+        {
+            frame = (frame+1)%4;
+            time = SDL_GetTicks();
+        }
+
+        rect_cat_nv = {frame*95, 0, 95, 85};
+        nv_w = 95;
+        rect_nv = {nv_x, nv_y, nv_w*2, 145};
+        SDL_RenderClear(renderer);
+        rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
+        SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
+        SDL_RenderCopy(renderer, nv_tancong, &rect_cat_nv, &rect_nv);
+        break;
+
+        //Chet ________________________________________________________________________________________________________________
+    case 5:
+
+        if (SDL_GetTicks() - time >= 700)
+        {
+            frame = (frame+1)%4;
+            time = SDL_GetTicks();
+        }
+        rect_cat_nv = {frame*77, 0, 77, 85};
+        nv_w = 77;
+        rect_nv = {nv_x, nv_y, nv_w*2, 145};
+        SDL_RenderClear(renderer);
+        rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
+        SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
+        SDL_RenderCopy(renderer, nv_chet, &rect_cat_nv, &rect_nv);
+        play = 2;
+        break;
+
+    default:
+        trangthai = 0;
     }
 }
 
 void hanhdongzombie()
 {
+    switch (trangthai_zom)
+    {
+        //Di chuyen
+        case 0:
+            break;
 
+        //Chet
+        case 1:
+            break;
+    }
 }
-
