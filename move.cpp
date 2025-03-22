@@ -7,6 +7,8 @@
 #include "move.h"
 #include "musics.h"
 
+using namespace std;
+
 int trangthai = 0, trangthai_zom = 0;
 
 int frame = 0;
@@ -98,6 +100,38 @@ void hanhdongnhanvat ()
             time = SDL_GetTicks();
         }
 
+        if (phat_no1)
+        {
+            if (thutuno % 4 == 0)
+            {
+                if (no1 == nullptr) cout << "Loi tai nhac: " << Mix_GetError() << endl;
+                else Mix_PlayChannel(-1, no1, 0);
+                thutuno++;
+                phat_no1 = 0;
+            }
+            else if (thutuno % 4 == 1)
+            {
+                if (no2 == nullptr) cout << "Loi tai nhac: " << Mix_GetError() << endl;
+                else Mix_PlayChannel(-1, no2, 0);
+                thutuno++;
+                phat_no1 = 0;
+            }
+            else if (thutuno % 4 == 2)
+            {
+                if (no3 == nullptr) cout << "Loi tai nhac: " << Mix_GetError() << endl;
+                else Mix_PlayChannel(-1, no3, 0);
+                thutuno++;
+                phat_no1 = 0;
+            }
+            else
+            {
+                if (no4 == nullptr) cout << "Loi tai nhac: " << Mix_GetError() << endl;
+                else Mix_PlayChannel(-1, no4, 0);
+                thutuno++;
+                phat_no1 = 0;
+            }
+        }
+
         rect_cat_nv = {frame*80, 0, 80, 85};
         nv_w = 80;
         rect_nv = {nv_x, nv_y, nv_w*2, 145};
@@ -107,6 +141,20 @@ void hanhdongnhanvat ()
         SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
         SDL_RenderCopy(renderer, anhbungno, NULL, &rect_anh);
         SDL_RenderCopy(renderer, nv_bungno, &rect_cat_nv, &rect_nv);
+
+        if (thoigian)
+        {
+            time1 = SDL_GetTicks();
+            thoigian = 0;
+        }
+
+        if (SDL_GetTicks() - time1 >= 1500)
+        {
+            trangthai = 0;
+            thoigian = 1;
+            phat_no1 = 1;
+        }
+
         break;
 
         //Tan cong ________________________________________________________________________________________________________________
@@ -126,9 +174,8 @@ void hanhdongnhanvat ()
         SDL_RenderCopy(renderer, nv_tancong, &rect_cat_nv, &rect_nv);
         break;
 
-        //Chet ________________________________________________________________________________________________________________
+        //Chet _________________w_______________________________________________________________________________________________
     case 5:
-
         if (SDL_GetTicks() - time >= 700)
         {
             frame = (frame+1)%4;

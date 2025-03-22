@@ -26,6 +26,18 @@ extern SDL_Texture* zombie_khoaitay;
 
 extern Mix_Music* nhacnen;
 
+extern Mix_Chunk* no1;
+
+extern bool phat_no1;
+
+extern Mix_Chunk* no2;
+
+extern Mix_Chunk* no3;
+
+extern Mix_Chunk* no4;
+
+extern int thutuno;
+
 extern SDL_Texture* zombie_nhayxa;
 
 extern SDL_Texture* danbungno;
@@ -33,8 +45,6 @@ extern SDL_Texture* danbungno;
 extern SDL_Texture* danthuong;
 
 extern SDL_Texture* anhbungno;
-
-extern SDL_Texture* thannam;
 
 extern SDL_Texture* thannu;
 
@@ -45,6 +55,8 @@ extern SDL_Texture* nv_tancong;
 extern SDL_Texture* nv_bungno;
 
 extern SDL_Texture* menu;
+
+extern bool thoigian;
 
 extern const int S_W;
 
