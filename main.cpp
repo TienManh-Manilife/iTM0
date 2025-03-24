@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
+#include <vector>
 #include "graphics.h"
 #include "move.h"
 #include "musics.h"
@@ -36,6 +37,8 @@ int main(int argc, char* argv[])
                     mouse.y = event.button.y;
                 }
             }
+            SDL_RenderCopy(renderer, menu, NULL, NULL);
+            SDL_RenderPresent(renderer);
             if (mouse.x >= 135 && mouse.x <= 300 && mouse.y >= 115 && mouse.y <= 222) play = 0;
         }
 
@@ -49,9 +52,9 @@ int main(int argc, char* argv[])
             }
 
             hanhdongnhanvat();
-
+            hanhdongzombie();
             SDL_RenderPresent(renderer);
-            SDL_Delay(30);
+            SDL_Delay(20);
         }
 
         //Ketthuc

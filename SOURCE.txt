@@ -1,3 +1,17 @@
-* Nguồn ảnh nền, kẻ địch, nhạc nền: Plants vs Zombies
-* Nguồn ảnh nhân vật: 
-* Nguồn
+* Quá trình lên ý tưởng:
+
+* Các dòng code: 
+- Tham khảo thêm các hàm ở trên mạng.
+- Code tự làm 100%.
+- chỗ nào lỗi không sửa được, nhờ ChatGPT.
+
+* Nguồn ảnh:
+- Nhân vật:
+- Zombie + Nền: Lấy từ game Plants vs Zombies
+- Đạn và các vòng phép: 
+- Ảnh màn hình chính của trò chơi: Tự mình ghép ảnh trên Canva
+
+* Nguồn âm thanh:
+- Nhạc nền + Âm thanh của zombies: Lấy từ game Plants vs Zombies
+- Âm thanh khi bắn đạn: 
+- Âm thanh nhân vật nói khi dùng chiêu bùng nổ: Lồng tiếng của kỹ năng nguyên tố và kỹ năng nộ của nhân vật Emilie (Trong Genshin Impact)

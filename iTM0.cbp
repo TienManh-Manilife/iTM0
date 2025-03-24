@@ -37,8 +37,6 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="move.cpp" />
 		<Unit filename="move.h" />
-		<Unit filename="musics.cpp" />
-		<Unit filename="musics.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

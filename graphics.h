@@ -36,6 +36,8 @@ extern Mix_Chunk* no3;
 
 extern Mix_Chunk* no4;
 
+extern Mix_Chunk* tancong1;
+
 extern int thutuno;
 
 extern SDL_Texture* zombie_nhayxa;
@@ -46,8 +48,6 @@ extern SDL_Texture* danthuong;
 
 extern SDL_Texture* anhbungno;
 
-extern SDL_Texture* thannu;
-
 extern SDL_Texture* nv_chet;
 
 extern SDL_Texture* nv_tancong;
@@ -56,7 +56,7 @@ extern SDL_Texture* nv_bungno;
 
 extern SDL_Texture* menu;
 
-extern bool thoigian;
+extern bool thoigian1, thoigian2, phat_tancong1;
 
 extern const int S_W;
 
@@ -81,5 +81,7 @@ bool initGraphics();
 void cleanupGraphics();
 
 extern Uint32 time, time1;
+
+extern SDL_Rect rect_dan;
 
 #endif

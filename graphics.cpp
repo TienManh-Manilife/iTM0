@@ -2,6 +2,7 @@
 #include "graphics.h"
 #include <iostream>
 #include <SDL2/SDL_mixer.h>
+#include <vector>
 #include "move.h"
 
 using namespace std;
@@ -13,7 +14,6 @@ using namespace std;
     SDL_Texture* nv_dungyen = nullptr;
     SDL_Texture* nv_tancong = nullptr;
     SDL_Texture* thannam = nullptr;
-    SDL_Texture* thannu = nullptr;
     SDL_Texture* zombie_thuong = nullptr;
     SDL_Texture* zombie_nhayxa = nullptr;
     SDL_Texture* zombie_dabong = nullptr;
@@ -30,16 +30,19 @@ using namespace std;
     Mix_Chunk* no2 = nullptr;
     Mix_Chunk* no3 = nullptr;
     Mix_Chunk* no4 = nullptr;
+    Mix_Chunk* tancong1;
     int thutuno = 0;
     Mouse mouse = {0,0};
     const int S_W = 1040;
     const int S_H = 780;
-    const int SP = 3;
+    const int SP = 70;
     Uint32 time = 0, time1 = 0;
     bool bool_time1 = 1;
     int play = 1;
     bool phat_no1 = 1;
-    bool thoigian = 1;
+    bool phat_tancong1 = 1;
+    bool thoigian1 = 1, thoigian2 = 1;
+    SDL_Rect rect_dan = {0, 0, 0, 0};
 
 bool initGraphics()
 {
@@ -63,6 +66,7 @@ bool initGraphics()
     no2 = Mix_LoadWAV ("no2.wav");
     no3 = Mix_LoadWAV ("no3.wav");
     no4 = Mix_LoadWAV ("no4.wav");
+    tancong1 = Mix_LoadWAV("nhactancong1.wav");
 
     window = SDL_CreateWindow("iTM0", 120, 20, S_W, S_H, SDL_WINDOW_SHOWN);
     if (!window)
@@ -83,16 +87,17 @@ bool initGraphics()
     nv_dungyen = IMG_LoadTexture(renderer, "nvdungyen.png");
     nv_tancong = IMG_LoadTexture(renderer, "nvtancong.png");
     nv_bungno = IMG_LoadTexture(renderer, "nvbungno.png");
-    thannu = IMG_LoadTexture(renderer, "thannu.png");
     zombie_thuong = IMG_LoadTexture(renderer, "zombie_thuong.png");
     zombie_nhayxa = IMG_LoadTexture(renderer, "zombie_nhayxa.png");
     zombie_dabong = IMG_LoadTexture(renderer, "zombie_dabong.png");
     zombie_mu = IMG_LoadTexture(renderer, "zombie_mu.png");
     zombie_khoaitay = IMG_LoadTexture(renderer, "zombie_khoaitay.png");
     zombie_canhcua = IMG_LoadTexture(renderer, "zombie_canhcua.png");
-    SDL_Texture* danbungno = IMG_LoadTexture(renderer, "danbungno.png");;
-    SDL_Texture* danthuong = IMG_LoadTexture(renderer, "danthuong.png");;
-    SDL_Texture* anhbungno = IMG_LoadTexture(renderer, "anhbungno.png");;
+    danbungno = IMG_LoadTexture(renderer, "danbungno.png");
+    danthuong = IMG_LoadTexture(renderer, "danthuong.png");
+    anhbungno = IMG_LoadTexture(renderer, "anhbungno.png");
+    menu = IMG_LoadTexture(renderer, "anhbungno.png");
+    if (!anhbungno) cout << "Khong load anhbungno: " << IMG_GetError() << endl;
 
     SDL_QueryTexture(nen, NULL, NULL, &nen_w, &nen_h);
 
@@ -107,7 +112,6 @@ void cleanupGraphics()
     SDL_DestroyTexture(zombie_nhayxa);
     SDL_DestroyTexture(zombie_dabong);
     SDL_DestroyTexture(zombie_thuong);
-    SDL_DestroyTexture(thannu);
     SDL_DestroyTexture(nv_tancong);
     SDL_DestroyTexture(nv_dungyen);
     SDL_DestroyTexture(nv_chet);
@@ -120,6 +124,10 @@ void cleanupGraphics()
     SDL_DestroyTexture(anhbungno);
     SDL_DestroyTexture(nv_tancong);
     Mix_FreeMusic(nhacnen);
+    Mix_FreeChunk(no1);
+    Mix_FreeChunk(no2);
+    Mix_FreeChunk(no3);
+    Mix_FreeChunk(no4);
     Mix_CloseAudio();
     SDL_Quit();
 }
