@@ -56,6 +56,8 @@ extern SDL_Texture* nv_bungno;
 
 extern SDL_Texture* menu;
 
+extern SDL_Texture* zombieTextures[5];
+
 extern bool thoigian1, thoigian2, phat_tancong1;
 
 extern const int S_W;
@@ -74,13 +76,13 @@ extern Mouse mouse;
 
 extern bool bool_time1;
 
-extern int play;
+extern int play, KILL;
 
 bool initGraphics();
 
 void cleanupGraphics();
 
-extern Uint32 time, time1;
+extern Uint32 time0, time1;
 
 extern SDL_Rect rect_dan;
 

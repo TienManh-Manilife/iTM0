@@ -3,10 +3,10 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_ttf.h>
 #include <vector>
 #include "graphics.h"
 #include "move.h"
-#include "musics.h"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int trangthai = 0, trangthai_zom = 0;
 
 int frame = 0;
 
-int dan_x = 0, dan_y = 0;
+int dan_x = 0, dan_y = 0, zb_w, zb_h;
 
 int nv_x = 30, nv_y = 0, nv_w = 0;
 
@@ -24,20 +24,15 @@ SDL_Rect rect_cat_nv = {0, 0, nv_w, 85};
 
 SDL_Rect rect_anh = {nv_x, nv_y, nv_w, 85};
 
-SDL_Rect rect_thuong = {0,0,0,0};
-
-SDL_Rect rect_cat_thuong = {0, 0, 0, 0};
-
-int nen_w, nen_h;
-
-Uint32 zombie_time = 0;
+int nen_w, nen_h, zombie_frame = 0;
 
 SDL_Rect rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
 
-bool x = 1;
+Uint32 time_zb = 0;
 
-int zb_x = 1040;
+int frame_zb = 0;
 
+vector<Zombie*> zombies;
 
 void capnhattrangthai (SDL_Event &event, int &trangthai, bool &run)
 {
@@ -77,10 +72,10 @@ void hanhdongnhanvat ()
     {
         //Dung yen
     case 0:
-        if (SDL_GetTicks() - time >= 100)
+        if (SDL_GetTicks() - time0 >= 100)
         {
             frame = (frame+1)%6;
-            time = SDL_GetTicks();
+            time0 = SDL_GetTicks();
         }
         rect_cat_nv = {frame*73, 0, 73, 85};
         nv_w = 73;
@@ -106,10 +101,10 @@ void hanhdongnhanvat ()
         //Bung no
     case 3:
 
-        if (SDL_GetTicks() - time >= 100)
+        if (SDL_GetTicks() - time0 >= 100)
         {
             frame = (frame+1)%3;
-            time = SDL_GetTicks();
+            time0 = SDL_GetTicks();
         }
 
         if (phat_no1)
@@ -182,10 +177,10 @@ void hanhdongnhanvat ()
             phat_tancong1 = 0;
         }
 
-        if (SDL_GetTicks() - time >= 100)
+        if (SDL_GetTicks() - time0 >= 100)
         {
             frame = (frame+1)%4;
-            time = SDL_GetTicks();
+            time0 = SDL_GetTicks();
         }
 
         if (thoigian2)
@@ -209,7 +204,7 @@ void hanhdongnhanvat ()
         rect_nv = {nv_x, nv_y, nv_w*2, 145};
         SDL_RenderClear(renderer);
         rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
-        rect_dan = {dan_x += SP, dan_y - 50, 120, 120};
+        rect_dan = {dan_x += SP, dan_y - 75, 150, 150};
         SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
         SDL_RenderCopy(renderer, danthuong, NULL, &rect_dan);
         SDL_RenderCopy(renderer, nv_tancong, &rect_cat_nv, &rect_nv);
@@ -217,10 +212,10 @@ void hanhdongnhanvat ()
 
         //Chet _________________w_______________________________________________________________________________________________
     case 5:
-        if (SDL_GetTicks() - time >= 700)
+        if (SDL_GetTicks() - time0 >= 700)
         {
             frame = (frame+1)%4;
-            time = SDL_GetTicks();
+            time0 = SDL_GetTicks();
         }
         rect_cat_nv = {frame*77, 0, 77, 85};
         nv_w = 77;
@@ -237,18 +232,51 @@ void hanhdongnhanvat ()
     }
 }
 
-void hanhdongzombie()
-{
 
-    if (SDL_GetTicks() - zombie_time >= 100)
+// Code ben duoi tham khao CHAT GPT
+void spawnZombie()
+{
+    int type = rand() % 5;
+    int startY = rand() % (S_H - 80);
+    zombies.push_back(new Zombie(type, S_W, startY));
+}
+
+void updateZombies()
+{
+    for (size_t i = 0; i < zombies.size(); i++)
     {
-        frame = (frame+1)%7;
-        zombie_time = SDL_GetTicks();
+        zombies[i]->move();
+        if (zombies[i]->isOffScreen())
+        {
+            delete zombies[i];
+            zombies.erase(zombies.begin() + i);
+            i--;
+        }
     }
 
-    zb_x -= 1;
+    for (auto it = zombies.begin(); it != zombies.end(); )
+        {
+        if (dan_x >= (*it)->rect.x && dan_x <= (*it)->rect.x + (*it)->rect.w &&
+            dan_y >= (*it)->rect.y && dan_y <= (*it)->rect.y + (*it)->rect.h) {
 
-    rect_cat_thuong = {frame*182, 0, 182, 196};
-    rect_thuong = {zb_x, 150, 73*2, 145};
-    SDL_RenderCopy(renderer, zombie_thuong, &rect_cat_thuong, &rect_thuong);
+            (*it)->health -= 1;
+
+            if ((*it)->health <= 0)
+            {
+                delete *it;
+                it = zombies.erase(it);
+                KILL++;
+            }
+            else ++it;
+        }
+        else ++it;
+    }
+}
+
+void renderZombies()
+{
+    for (Zombie* z : zombies)
+    {
+        z->render();
+    }
 }

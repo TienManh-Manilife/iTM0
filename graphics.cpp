@@ -3,6 +3,7 @@
 #include <iostream>
 #include <SDL2/SDL_mixer.h>
 #include <vector>
+#include <SDL2/SDL_ttf.h>
 #include "move.h"
 
 using namespace std;
@@ -31,19 +32,19 @@ using namespace std;
     Mix_Chunk* no3 = nullptr;
     Mix_Chunk* no4 = nullptr;
     Mix_Chunk* tancong1;
-    int thutuno = 0;
+    int thutuno = 0, KILL = 0;
     Mouse mouse = {0,0};
     const int S_W = 1040;
     const int S_H = 780;
     const int SP = 70;
-    Uint32 time = 0, time1 = 0;
+    Uint32 time0 = 0, time1 = 0;
     bool bool_time1 = 1;
     int play = 1;
     bool phat_no1 = 1;
     bool phat_tancong1 = 1;
     bool thoigian1 = 1, thoigian2 = 1;
     SDL_Rect rect_dan = {0, 0, 0, 0};
-
+    SDL_Texture* zombieTextures[5];
 bool initGraphics()
 {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
@@ -87,12 +88,11 @@ bool initGraphics()
     nv_dungyen = IMG_LoadTexture(renderer, "nvdungyen.png");
     nv_tancong = IMG_LoadTexture(renderer, "nvtancong.png");
     nv_bungno = IMG_LoadTexture(renderer, "nvbungno.png");
-    zombie_thuong = IMG_LoadTexture(renderer, "zombie_thuong.png");
-    zombie_nhayxa = IMG_LoadTexture(renderer, "zombie_nhayxa.png");
-    zombie_dabong = IMG_LoadTexture(renderer, "zombie_dabong.png");
-    zombie_mu = IMG_LoadTexture(renderer, "zombie_mu.png");
-    zombie_khoaitay = IMG_LoadTexture(renderer, "zombie_khoaitay.png");
-    zombie_canhcua = IMG_LoadTexture(renderer, "zombie_canhcua.png");
+    zombieTextures[0] = IMG_LoadTexture(renderer, "zombie_thuong.png");
+    zombieTextures[2] = IMG_LoadTexture(renderer, "zombie_nhayxa.png");
+    zombieTextures[4] = IMG_LoadTexture(renderer, "zombie_dabong.png");
+    zombieTextures[1] = IMG_LoadTexture(renderer, "zombie_mu.png");
+    zombieTextures[3] = IMG_LoadTexture(renderer, "zombie_canhcua.png");
     danbungno = IMG_LoadTexture(renderer, "danbungno.png");
     danthuong = IMG_LoadTexture(renderer, "danthuong.png");
     anhbungno = IMG_LoadTexture(renderer, "anhbungno.png");
@@ -106,12 +106,7 @@ bool initGraphics()
 
 void cleanupGraphics()
 {
-    SDL_DestroyTexture(zombie_canhcua);
-    SDL_DestroyTexture(zombie_khoaitay);
-    SDL_DestroyTexture(zombie_mu );
-    SDL_DestroyTexture(zombie_nhayxa);
-    SDL_DestroyTexture(zombie_dabong);
-    SDL_DestroyTexture(zombie_thuong);
+    for (int i = 0; i < 4; i++) SDL_DestroyTexture(zombieTextures[i]);
     SDL_DestroyTexture(nv_tancong);
     SDL_DestroyTexture(nv_dungyen);
     SDL_DestroyTexture(nv_chet);

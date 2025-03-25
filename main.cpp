@@ -4,14 +4,17 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 #include "graphics.h"
 #include "move.h"
-#include "musics.h"
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
+    srand(time(0));
+
     // Khởi tạo:
     if (!initGraphics()) return -1;
 
@@ -24,6 +27,7 @@ int main(int argc, char* argv[])
     // Vòng lặp sự kiện:
     bool run = 1;
     SDL_Event event;
+    int spawnTimer = 0;
     while(run)
     {
         if (play == 1)
@@ -52,7 +56,17 @@ int main(int argc, char* argv[])
             }
 
             hanhdongnhanvat();
-            hanhdongzombie();
+
+
+            spawnTimer++;
+        if (spawnTimer > 100)
+        {
+            spawnZombie();
+            spawnTimer = 0;
+        }
+        updateZombies();
+        renderZombies();
+
             SDL_RenderPresent(renderer);
             SDL_Delay(20);
         }
@@ -60,19 +74,13 @@ int main(int argc, char* argv[])
         //Ketthuc
         else if (play == 2)
         {
-            while(SDL_PollEvent(&event))
-            {
-                if (event.type == SDL_QUIT) run = 0;
-                if (event.type == SDL_MOUSEBUTTONDOWN)
-                {
-                    play = 0;
-                }
-            }
-            //______________________________________________________________________________
+            run = 0;
         }
     }
 
     // Giải phóng bộ nhớ:
     cleanupGraphics();
+
+    cout << "Ban da giet duoc: " << KILL;
     return 0;
 }

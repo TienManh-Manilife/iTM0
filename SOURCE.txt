@@ -2,7 +2,7 @@
 
 * Các dòng code: 
 - Tham khảo thêm các hàm ở trên mạng.
-- Code tự làm 100%.
+- Code tự làm 95%. 5% còn lại nhờ CHAT GPT.
 - chỗ nào lỗi không sửa được, nhờ ChatGPT.
 
 * Nguồn ảnh:
