@@ -8,7 +8,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1742890553 source:d:\file codeblock\itm0\main.cpp
+1742915974 source:d:\file codeblock\itm0\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -33,7 +33,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1742890553 source:d:\file codeblock\itm0\graphics.cpp
+1742906510 source:d:\file codeblock\itm0\graphics.cpp
 	"graphics.h"
 	<iostream>
 	<SDL2/SDL_mixer.h>
@@ -41,14 +41,14 @@
 	<SDL2/SDL_ttf.h>
 	"move.h"
 
-1742890553 d:\file codeblock\itm0\graphics.h
+1742906510 d:\file codeblock\itm0\graphics.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
 
 1742317477 source:d:\file codeblock\itm0\musics.cpp
 
-1742890553 source:d:\file codeblock\itm0\move.cpp
+1742916988 source:d:\file codeblock\itm0\move.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>

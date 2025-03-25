@@ -1,9 +1,6 @@
-* Quá trình lên ý tưởng:
-
 * Các dòng code: 
 - Tham khảo thêm các hàm ở trên mạng.
-- Code tự làm 95%. 5% còn lại nhờ CHAT GPT.
-- chỗ nào lỗi không sửa được, nhờ ChatGPT.
+- Hầu hết code là tự viết. Những code tham khảo Chat GPT thì đã được kí hiệu là tham khảo ở ngay trong code.
 
 * Nguồn ảnh:
 - Nhân vật:
@@ -14,4 +11,4 @@
 * Nguồn âm thanh:
 - Nhạc nền + Âm thanh của zombies: Lấy từ game Plants vs Zombies
 - Âm thanh khi bắn đạn: 
-- Âm thanh nhân vật nói khi dùng chiêu bùng nổ: Lồng tiếng của kỹ năng nguyên tố và kỹ năng nộ của nhân vật Emilie (Trong Genshin Impact)
+- Âm thanh nhân vật nói khi dùng chiêu bùng nổ: Lồng tiếng của nhân vật Emilie (Trong Genshin Impact)

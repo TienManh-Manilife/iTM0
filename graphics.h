@@ -42,6 +42,8 @@ extern int thutuno;
 
 extern SDL_Texture* zombie_nhayxa;
 
+extern SDL_Texture* thannu;
+
 extern SDL_Texture* danbungno;
 
 extern SDL_Texture* danthuong;
@@ -76,7 +78,7 @@ extern Mouse mouse;
 
 extern bool bool_time1;
 
-extern int play, KILL;
+extern int play, KILL, dungno;
 
 bool initGraphics();
 

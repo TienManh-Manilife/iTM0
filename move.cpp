@@ -100,7 +100,8 @@ void hanhdongnhanvat ()
 
         //Bung no
     case 3:
-
+    if (true)
+    {
         if (SDL_GetTicks() - time0 >= 100)
         {
             frame = (frame+1)%3;
@@ -138,12 +139,11 @@ void hanhdongnhanvat ()
                 phat_no1 = 0;
             }
         }
-
         if (thoigian1)
         {
             time1 = SDL_GetTicks();
             thoigian1 = 0;
-            dan_y = nv_y;
+            dan_y = nv_y + 60;
             dan_x = nv_x;
         }
 
@@ -152,6 +152,7 @@ void hanhdongnhanvat ()
             trangthai = 0;
             thoigian1 = 1;
             phat_no1 = 1;
+            dungno -= 10;
         }
 
         rect_cat_nv = {frame*80, 0, 80, 85};
@@ -159,13 +160,16 @@ void hanhdongnhanvat ()
         rect_nv = {nv_x, nv_y, nv_w*2, 145};
         rect_anh = {nv_x - 110, nv_y-20, nv_w*4, 145*2};
         dan_x += SP;
-        rect_dan = {dan_x, dan_y-250, 700, 700};
+        rect_dan = {dan_x += SP, dan_y - 75, 170, 170};
         rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
         SDL_RenderCopy(renderer, anhbungno, NULL, &rect_anh);
         SDL_RenderCopy(renderer, danbungno, NULL, &rect_dan);
         SDL_RenderCopy(renderer, nv_bungno, &rect_cat_nv, &rect_nv);
+    }
+
+    else trangthai = 0;
         break;
 
         //Tan cong ________________________________________________________________________________________________________________
@@ -204,27 +208,10 @@ void hanhdongnhanvat ()
         rect_nv = {nv_x, nv_y, nv_w*2, 145};
         SDL_RenderClear(renderer);
         rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
-        rect_dan = {dan_x += SP, dan_y - 75, 150, 150};
+        rect_dan = {dan_x += SP, dan_y - 75, 130, 130};
         SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
         SDL_RenderCopy(renderer, danthuong, NULL, &rect_dan);
         SDL_RenderCopy(renderer, nv_tancong, &rect_cat_nv, &rect_nv);
-        break;
-
-        //Chet _________________w_______________________________________________________________________________________________
-    case 5:
-        if (SDL_GetTicks() - time0 >= 700)
-        {
-            frame = (frame+1)%4;
-            time0 = SDL_GetTicks();
-        }
-        rect_cat_nv = {frame*77, 0, 77, 85};
-        nv_w = 77;
-        rect_nv = {nv_x, nv_y, nv_w*2, 145};
-        SDL_RenderClear(renderer);
-        rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
-        SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
-        SDL_RenderCopy(renderer, nv_chet, &rect_cat_nv, &rect_nv);
-        play = 2;
         break;
 
     default:
@@ -237,7 +224,26 @@ void hanhdongnhanvat ()
 void spawnZombie()
 {
     int type = rand() % 5;
-    int startY = rand() % (S_H - 80);
+    int truonghop = rand() % 5;
+    int startY;
+    switch (truonghop)
+    {
+    case 0:
+        startY = 0;
+        break;
+    case 1:
+        startY = 136;
+        break;
+    case 2:
+        startY = 8+136*2;
+        break;
+    case 3:
+        startY = 8+136*3;
+        break;
+    case 4:
+        startY = 8+136*4+20;
+        break;
+    }
     zombies.push_back(new Zombie(type, S_W, startY));
 }
 
@@ -257,15 +263,23 @@ void updateZombies()
     for (auto it = zombies.begin(); it != zombies.end(); )
         {
         if (dan_x >= (*it)->rect.x && dan_x <= (*it)->rect.x + (*it)->rect.w &&
-            dan_y >= (*it)->rect.y && dan_y <= (*it)->rect.y + (*it)->rect.h) {
-
-            (*it)->health -= 1;
+            (dan_y >= (*it)->rect.y && dan_y <= (*it)->rect.y + (*it)->rect.h) )
+        {
+            if (trangthai == 3)
+            {
+                (*it)->health -= 7;
+            }
+            else
+            {
+                (*it)->health -= 1;
+            }
 
             if ((*it)->health <= 0)
             {
                 delete *it;
                 it = zombies.erase(it);
                 KILL++;
+                dungno++;
             }
             else ++it;
         }

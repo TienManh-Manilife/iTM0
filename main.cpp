@@ -67,8 +67,14 @@ int main(int argc, char* argv[])
         updateZombies();
         renderZombies();
 
-            SDL_RenderPresent(renderer);
-            SDL_Delay(20);
+        if (dungno >= 10)
+        {
+            SDL_Rect bungno = {0,0, 100, 100};
+            SDL_RenderCopy(renderer, thannu, NULL, &bungno);
+        }
+
+        SDL_RenderPresent(renderer);
+        SDL_Delay(20);
         }
 
         //Ketthuc
@@ -81,6 +87,7 @@ int main(int argc, char* argv[])
     // Giải phóng bộ nhớ:
     cleanupGraphics();
 
+    if (play == 2) cout << "YOU LOSE!!!" << endl;
     cout << "Ban da giet duoc: " << KILL;
     return 0;
 }
