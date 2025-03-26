@@ -78,13 +78,13 @@ extern Mouse mouse;
 
 extern bool bool_time1;
 
-extern int play, KILL, dungno;
+extern int play, KILL, dungno, nangcap;
 
 bool initGraphics();
 
 void cleanupGraphics();
 
-extern Uint32 time0, time1;
+extern Uint32 time0, time1, time2;
 
 extern SDL_Rect rect_dan;
 

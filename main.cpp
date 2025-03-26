@@ -67,13 +67,27 @@ int main(int argc, char* argv[])
         updateZombies();
         renderZombies();
 
-        if (dungno >= 10)
+        if (dungno >= 15)
         {
             SDL_Rect bungno = {0,0, 100, 100};
             SDL_RenderCopy(renderer, thannu, NULL, &bungno);
         }
 
+        if (nangcap >= 50)
+        {
+            SDL_Rect dungnangcap = {0,680, 100, 100};
+            SDL_RenderCopy(renderer, danbungno, NULL, &dungnangcap);
+        }
+
         SDL_RenderPresent(renderer);
+
+        if (SDL_GetTicks() - time2 >= 100)
+        {
+            damage ++;
+            time2 = SDL_GetTicks();
+            if (ZOMBIE_SPEED_ADD <= 10000)ZOMBIE_SPEED_ADD++;
+            hp++;
+        }
         SDL_Delay(20);
         }
 

@@ -30,7 +30,11 @@ SDL_Rect rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
 
 Uint32 time_zb = 0;
 
+int damage = 0, hp = 0;
+
 int frame_zb = 0;
+
+int ZOMBIE_SPEED = 1, ZOMBIE_SPEED_ADD = 1, damage_add = 0;
 
 vector<Zombie*> zombies;
 
@@ -53,6 +57,11 @@ void capnhattrangthai (SDL_Event &event, int &trangthai, bool &run)
         else if (event.key.keysym.sym == SDLK_SPACE)
         {
             trangthai = 3; // Bung no
+        }
+        else if (event.key.keysym.sym == SDLK_e && nangcap >= 50)
+        {
+            trangthai = 5;
+            nangcap -= 50;
         }
         else trangthai = 0;
         break;
@@ -100,7 +109,7 @@ void hanhdongnhanvat ()
 
         //Bung no
     case 3:
-    if (true)
+    if (dungno >= 15)
     {
         if (SDL_GetTicks() - time0 >= 100)
         {
@@ -152,7 +161,7 @@ void hanhdongnhanvat ()
             trangthai = 0;
             thoigian1 = 1;
             phat_no1 = 1;
-            dungno -= 10;
+            dungno -= 15;
         }
 
         rect_cat_nv = {frame*80, 0, 80, 85};
@@ -214,6 +223,36 @@ void hanhdongnhanvat ()
         SDL_RenderCopy(renderer, nv_tancong, &rect_cat_nv, &rect_nv);
         break;
 
+        // Nang cap vu khi
+    case 5:
+        if (thoigian1)
+        {
+            time1 = SDL_GetTicks();
+            thoigian1 = 0;
+            dan_y = nv_y + 60;
+            dan_x = nv_x;
+        }
+        if (SDL_GetTicks() - time1 >= 500)
+        {
+            trangthai = 0;
+            thoigian1 = 1;
+            damage_add = damage_add + 6;
+        }
+        if (SDL_GetTicks() - time0 >= 100)
+        {
+            frame = (frame+1)%6;
+            time0 = SDL_GetTicks();
+        }
+        rect_cat_nv = {frame*73, 0, 73, 85};
+        nv_w = 73;
+        rect_nv = {nv_x, nv_y, nv_w*2, 145};
+        SDL_RenderClear(renderer);
+        rect_nen = {0, 0, nen_w*13/15, nen_h*13/15};
+        rect_dan = {200,70, 700,700};
+        SDL_RenderCopy(renderer, nen, NULL, &rect_nen);
+        SDL_RenderCopy(renderer, danbungno, NULL, &rect_dan);
+        SDL_RenderCopy(renderer, nv_dungyen, &rect_cat_nv, &rect_nv);
+        break;
     default:
         trangthai = 0;
     }
@@ -261,17 +300,17 @@ void updateZombies()
     }
 
     for (auto it = zombies.begin(); it != zombies.end(); )
-        {
+    {
         if (dan_x >= (*it)->rect.x && dan_x <= (*it)->rect.x + (*it)->rect.w &&
             (dan_y >= (*it)->rect.y && dan_y <= (*it)->rect.y + (*it)->rect.h) )
         {
             if (trangthai == 3)
             {
-                (*it)->health -= 7;
+                (*it)->health -= (15 + damage/50);
             }
             else
             {
-                (*it)->health -= 1;
+                (*it)->health = (*it)->health - (1 + damage_add);
             }
 
             if ((*it)->health <= 0)
@@ -280,10 +319,20 @@ void updateZombies()
                 it = zombies.erase(it);
                 KILL++;
                 dungno++;
+                nangcap++;
             }
             else ++it;
         }
         else ++it;
+    }
+
+    for (int i = zombies.size() - 1; i >= 0; i--)
+    {
+        if (zombies[i]->rect.x == 143 || zombies[i]->rect.x == 142 || zombies[i]->rect.x == 141 || zombies[i]->rect.x == 140)
+        {
+            play = 2;
+            break;
+        }
     }
 }
 

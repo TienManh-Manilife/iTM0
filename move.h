@@ -9,7 +9,7 @@
 
 extern int trangthai;
 
-extern int frame, frame_zb, zb_w, zb_h;
+extern int frame, frame_zb, zb_w, zb_h, damage, hp, damage_add;
 
 extern int nv_x, nv_y , nv_w, nen_w, nen_h, dan_x, dan_y;
 
@@ -27,13 +27,14 @@ void hanhdongnhanvat ();
 
 extern Uint32 time_zb;
 
-const int ZOMBIE_SPEED = 1;
+extern int ZOMBIE_SPEED, ZOMBIE_SPEED_ADD;
 
 
 // Code ben duoi tham khao CHAT GPT
-class Zombie {
+class Zombie
+{
 public:
-    int x, y, health;
+    int x = 1040, y, health;
     SDL_Texture* texture;
     SDL_Rect rect;
     Zombie(int type, int startX, int startY) {
@@ -43,8 +44,9 @@ public:
         health = getHealthByType(type);
     }
 
-    void move() {
-        x -= ZOMBIE_SPEED;
+    void move()
+    {
+        x -= (ZOMBIE_SPEED + ZOMBIE_SPEED_ADD/10000);
     }
 
     void render()
@@ -62,14 +64,7 @@ public:
 
     bool isOffScreen()
     {
-        return x < -50;
-    }
-
-    // Hàm xử lý khi zombie chết
-    void onDeath()
-    {
-        // Xóa zombie khỏi danh sách
-        std::cout << "Zombie loại " << type << " đã chết!\n";
+        return x<-50;
     }
 
 private:
@@ -78,12 +73,12 @@ private:
     {
         switch (type)
         {
-            case 0: return 3;
-            case 1: return 5;
-            case 2: return 5;
-            case 3: return 7;
-            case 4: return 7;
-            default: return 5;
+            case 0: return 1 + 1.2*hp/100;
+            case 1: return 2 + 1.2*hp/100;
+            case 2: return 3 + 1.2*hp/100;
+            case 3: return 4 + 1.2*hp/100;
+            case 4: return 5 + 1.2*hp/100;
+            default: return 4 + 1.2*hp/100;
         }
     }
 };
