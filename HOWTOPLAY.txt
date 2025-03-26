@@ -1,0 +1,22 @@
+1. Khi chạy chương trình sẽ xuất hiện màn hính chính. Ấn Play sẽ bắt đầu chơi game.
+
+2. Muốn tấn công thường: Ấn chuột trái.
+
+3. Kỹ năng bùng nổ là kỹ năng cực mạnh so với tấn công thường, được tích lũy sử dụng 1 lần mỗi khi tiêu diệt được 10 zombies. Có khả năng cộng dồn nếu như không sử dụng.
+Muốn sử dụng, ấn SPACE.
+Khi góc trên bên trái màn hình xuất hiện hình ảnh một vị thần nhỏ nhỏ thì được dùng kỹ năng nộ (Tức là đã tích lũy tiêu diệt 10 quái). Dùng xong sẽ biến mất. Nếu dùng xong vẫn còn xuất hiện tức là người chơi đã tích lũy nhiều lần sử dụng.
+Kỹ năng nộ có quỹ đạo di chuyển giống tấn công thường nhưng sát thương và tốc độ sẽ cao hơn.
+
+4. Cùng lúc trên màn hình chỉ được 1 lần tấn công. Khi hết lần tấn công này thì mới được tấn công lần tiếp.
+
+5. Máu của Zombies sẽ tăng theo thời gian.
+
+6. Sát thương kỹ năng bùng nổ sẽ tăng theo thời gian, nhưng sát thương tấn công thường thì không.
+
+7. Tích lũy mỗi 50 lần giết zombies sẽ xuất hiện một hình ảnh vòng phép ở cuối màn hình bên trái. Khi đó, nhấn E sẽ xuất hiện một vòng tròn ở giữa màn hình, tức là đã được nâng cấp vũ khí thành công. Khi nâng cấp vũ khí, sát thương tấn công thường sẽ tăng lên (Không có sát thương bùng nổ)
+
+8. Khi Zombies tiến đến cột đầu tiên nơi nhân vật đứng thì sẽ kết thúc trò chơi và tổng kết số điểm (Số zombies giết được) mà người chơi đạt được.
+
+9. Có nhiều loại zombies, mỗi loại sẽ có lượng máu khác nhau nhưng cùng tốc độ di chuyển.
+
+10. Sau một thời gian nhất định (10.000 giây), tốc độ di chuyển của zombies sẽ đột ngột tăng lên gấp 2 lần.

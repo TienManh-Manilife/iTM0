@@ -46,7 +46,7 @@ public:
 
     void move()
     {
-        x -= (ZOMBIE_SPEED + ZOMBIE_SPEED_ADD/10000);
+        x -= (ZOMBIE_SPEED + ZOMBIE_SPEED_ADD/3000);
     }
 
     void render()

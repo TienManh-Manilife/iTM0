@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
         {
             damage ++;
             time2 = SDL_GetTicks();
-            if (ZOMBIE_SPEED_ADD <= 10000)ZOMBIE_SPEED_ADD++;
+            if (ZOMBIE_SPEED_ADD <= 3000)ZOMBIE_SPEED_ADD++;
             hp++;
         }
         SDL_Delay(20);
