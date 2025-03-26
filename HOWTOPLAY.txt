@@ -1,6 +1,8 @@
 1. Khi chạy chương trình sẽ xuất hiện màn hính chính. Ấn Play sẽ bắt đầu chơi game.
 
 2. Muốn tấn công thường: Ấn chuột trái.
+Nhân vật chỉ được di chuyển lên/xuống nên cần nhấn w/s
+<Đảm bảo rằng bàn phím ở ngôn ngữ tiếng Anh, nếu bàn phím tiếng Việt thì nhân vật không di chuyển>
 
 3. Kỹ năng bùng nổ là kỹ năng cực mạnh so với tấn công thường, được tích lũy sử dụng 1 lần mỗi khi tiêu diệt được 10 zombies. Có khả năng cộng dồn nếu như không sử dụng.
 Muốn sử dụng, ấn SPACE.
