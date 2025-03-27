@@ -111,6 +111,7 @@ int main(int argc, char* argv[])
         // Huong dan
         else if (play == 3)
         {
+            mouse.x = 0;
             while(SDL_PollEvent(&event))
             {
                 if (event.type == SDL_QUIT) run = 0;
