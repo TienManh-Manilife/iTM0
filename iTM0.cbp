@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="event.cpp" />
+		<Unit filename="event.h" />
 		<Unit filename="graphics.cpp" />
 		<Unit filename="graphics.h" />
 		<Unit filename="main.cpp" />

@@ -10,7 +10,7 @@
 
 1743049337 D
 
-1743051916 source:d:\file codeblock\itm0\main.cpp
+1743057494 source:d:\file codeblock\itm0\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -20,6 +20,7 @@
 	<ctime>
 	"graphics.h"
 	"move.h"
+	"event.h"
 
 1743049337 ter
 	<iostream>
@@ -67,7 +68,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1743051916 source:d:\file codeblock\itm0\graphics.cpp
+1743057086 source:d:\file codeblock\itm0\graphics.cpp
 	"graphics.h"
 	<iostream>
 	<SDL2/SDL_mixer.h>
@@ -75,7 +76,7 @@
 	<SDL2/SDL_ttf.h>
 	"move.h"
 
-1743051916 d:\file codeblock\itm0\graphics.h
+1743057086 d:\file codeblock\itm0\graphics.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -101,4 +102,24 @@
 1742317480 d:\file codeblock\itm0\musics.h
 
 1742554738 source:d:\file codeblock\itm0\ketqua.cpp
+
+1743057237 source:d:\file codeblock\itm0\event.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	"graphics.h"
+	"move.h"
+
+1743057494 d:\file codeblock\itm0\event.h
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<vector>
+	<cstdlib>
+	<ctime>
 

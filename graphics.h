@@ -96,4 +96,10 @@ extern Uint32 time0, time1, time2;
 
 extern SDL_Rect rect_dan;
 
+extern bool run;
+
+extern int spawnTimer;
+
+extern SDL_Event event;
+
 #endif

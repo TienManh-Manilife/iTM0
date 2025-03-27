@@ -42,11 +42,13 @@ using namespace std;
     Uint32 time0 = 0, time1 = 0, time2 = 0;
     bool bool_time1 = 1;
     int play = 1;
-    bool phat_no1 = 1;
+    bool phat_no1 = 1, run = 1;
     bool phat_tancong1 = 1;
     bool thoigian1 = 1, thoigian2 = 1;
     SDL_Rect rect_dan = {0, 0, 0, 0};
     SDL_Texture* zombieTextures[5];
+    SDL_Event event;
+    int spawnTimer = 0;
 bool initGraphics()
 {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
