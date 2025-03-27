@@ -55,10 +55,7 @@ int main(int argc, char* argv[])
             {
                 capnhattrangthai (event, trangthai, run);
             }
-
             hanhdongnhanvat();
-
-
             spawnTimer++;
         if (spawnTimer > 100)
         {
@@ -92,35 +89,10 @@ int main(int argc, char* argv[])
         SDL_Delay(20);
         }
 
-<<<<<<< HEAD
-        // Lose
-        else if (play == 2)
-        {
-            mouse.x = 0;
-            mouse.y = 0;
-=======
-        //huong dan
-        else if (play == 3)
-        {
-            while(SDL_PollEvent(&event))
-            {
-                if (event.type == SDL_QUIT) run = 0;
-                if (event.type == SDL_MOUSEBUTTONDOWN)
-                {
-                    mouse.x = event.button.x;
-                    mouse.y = event.button.y;
-                }
-            }
-            SDL_RenderCopy(renderer, huongdan, NULL, NULL);
-            SDL_RenderPresent(renderer);
-            if (!(mouse.x >= 135 && mouse.x <= 300 && mouse.y >= 115 && mouse.y <= 222)) play = 0;
-        }
-
         //Lose
         else if (play == 2)
         {
             mouse.x = 0;
->>>>>>> master
             while(SDL_PollEvent(&event))
             {
                 if (event.type == SDL_QUIT) run = 0;
@@ -132,7 +104,6 @@ int main(int argc, char* argv[])
             }
             SDL_RenderCopy(renderer, lose, NULL, NULL);
             SDL_RenderPresent(renderer);
-<<<<<<< HEAD
             if (mouse.x !=0 && mouse.y !=0) run = 0;
 
         }
@@ -151,22 +122,14 @@ int main(int argc, char* argv[])
             }
             SDL_RenderCopy(renderer, huongdan, NULL, NULL);
             SDL_RenderPresent(renderer);
-            if (!(mouse.x >= 135 && mouse.x <= 300 && mouse.y >= 115 && mouse.y <= 222)) play = 0;
+            if (mouse.x != 0) play = 0;
         }
 
-=======
-            if (mouse.x != 0) run = 0;
-        }
-
->>>>>>> master
         //win
         else if (play == 4)
         {
             mouse.x = 0;
-<<<<<<< HEAD
             mouse.y = 0;
-=======
->>>>>>> master
             while(SDL_PollEvent(&event))
             {
                 if (event.type == SDL_QUIT) run = 0;
@@ -178,11 +141,7 @@ int main(int argc, char* argv[])
             }
             SDL_RenderCopy(renderer, win, NULL, NULL);
             SDL_RenderPresent(renderer);
-<<<<<<< HEAD
             if (mouse.x !=0 && mouse.y !=0) run = 0;
-=======
-            if (mouse.x != 0) run = 0;
->>>>>>> master
         }
 
         if (KILL >= 1000) play = 4;

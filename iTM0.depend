@@ -8,11 +8,9 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-<<<<<<< HEAD
-1743047412 source:d:\file codeblock\itm0\main.cpp
-=======
-1743049932 source:d:\file codeblock\itm0\main.cpp
->>>>>>> master
+1743049337 D
+
+1743051337 source:d:\file codeblock\itm0\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -22,6 +20,38 @@
 	<ctime>
 	"graphics.h"
 	"move.h"
+
+1743049337 ter
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	"graphics.h"
+	"move.h"
+	"graphics.h"
+	<iostream>
+	<SDL2/SDL_mixer.h>
+	<vector>
+	<SDL2/SDL_ttf.h>
+	"move.h"
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<SDL2/SDL_ttf.h>
+	<vector>
+	"graphics.h"
+	"move.h"
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<SDL2/SDL_ttf.h>
 
 1742024328 source:d:\file codeblock\itm0\dich.cpp
 	<iostream>
@@ -37,11 +67,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-<<<<<<< HEAD
-1743048090 source:d:\file codeblock\itm0\graphics.cpp
-=======
-1743049932 source:d:\file codeblock\itm0\graphics.cpp
->>>>>>> master
+1743051372 source:d:\file codeblock\itm0\graphics.cpp
 	"graphics.h"
 	<iostream>
 	<SDL2/SDL_mixer.h>
@@ -49,22 +75,14 @@
 	<SDL2/SDL_ttf.h>
 	"move.h"
 
-<<<<<<< HEAD
-1743046948 d:\file codeblock\itm0\graphics.h
-=======
-1743049932 d:\file codeblock\itm0\graphics.h
->>>>>>> master
+1743051080 d:\file codeblock\itm0\graphics.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
 
 1742317477 source:d:\file codeblock\itm0\musics.cpp
 
-<<<<<<< HEAD
-1743044726 source:d:\file codeblock\itm0\move.cpp
-=======
-1743049337 source:d:\file codeblock\itm0\move.cpp
->>>>>>> master
+1743051012 source:d:\file codeblock\itm0\move.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -74,11 +92,7 @@
 	"graphics.h"
 	"move.h"
 
-<<<<<<< HEAD
-1743044727 d:\file codeblock\itm0\move.h
-=======
-1743049337 d:\file codeblock\itm0\move.h
->>>>>>> master
+1743051012 d:\file codeblock\itm0\move.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>

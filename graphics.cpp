@@ -26,11 +26,6 @@ using namespace std;
     SDL_Texture* danbungno = nullptr;
     SDL_Texture* danthuong = nullptr;
     SDL_Texture* anhbungno = nullptr;
-<<<<<<< HEAD
-=======
-    SDL_Texture* lose = nullptr;
-    SDL_Texture* huongdan = nullptr;
->>>>>>> master
     SDL_Texture* win = nullptr;
     Mix_Music* nhacnen = nullptr;
     SDL_Texture* thannu = nullptr;
