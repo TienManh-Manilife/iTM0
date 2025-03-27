@@ -58,10 +58,10 @@ void capnhattrangthai (SDL_Event &event, int &trangthai, bool &run)
         {
             trangthai = 3; // Bung no
         }
-        else if (event.key.keysym.sym == SDLK_e && nangcap >= 50)
+        else if (event.key.keysym.sym == SDLK_e && nangcap >= 100)
         {
             trangthai = 5;
-            nangcap -= 50;
+            nangcap -= 100;
         }
         else trangthai = 0;
         break;

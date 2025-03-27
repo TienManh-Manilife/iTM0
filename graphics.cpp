@@ -11,20 +11,22 @@ using namespace std;
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
     SDL_Texture* nen = nullptr;
-    SDL_Texture* nv_chet = nullptr;
     SDL_Texture* nv_dungyen = nullptr;
     SDL_Texture* nv_tancong = nullptr;
     SDL_Texture* zombie_thuong = nullptr;
     SDL_Texture* zombie_nhayxa = nullptr;
     SDL_Texture* zombie_dabong = nullptr;
+    SDL_Texture* huongdan = nullptr;
     SDL_Texture* zombie_mu = nullptr;
     SDL_Texture* zombie_khoaitay = nullptr;
     SDL_Texture* zombie_canhcua = nullptr;
     SDL_Texture* nv_bungno = nullptr;
+    SDL_Texture* lose = nullptr;
     SDL_Texture* menu = nullptr;
     SDL_Texture* danbungno = nullptr;
     SDL_Texture* danthuong = nullptr;
     SDL_Texture* anhbungno = nullptr;
+    SDL_Texture* win = nullptr;
     Mix_Music* nhacnen = nullptr;
     SDL_Texture* thannu = nullptr;
     Mix_Chunk* no1 = nullptr;
@@ -84,7 +86,6 @@ bool initGraphics()
     }
 
     nen = IMG_LoadTexture(renderer, "nen.png");
-    nv_chet = IMG_LoadTexture(renderer, "nvchet.png");
     nv_dungyen = IMG_LoadTexture(renderer, "nvdungyen.png");
     nv_tancong = IMG_LoadTexture(renderer, "nvtancong.png");
     nv_bungno = IMG_LoadTexture(renderer, "nvbungno.png");
@@ -95,8 +96,11 @@ bool initGraphics()
     zombieTextures[1] = IMG_LoadTexture(renderer, "zombie_mu.png");
     zombieTextures[3] = IMG_LoadTexture(renderer, "zombie_canhcua.png");
     danbungno = IMG_LoadTexture(renderer, "danbungno.png");
+    lose = IMG_LoadTexture(renderer, "lose.png");
+    huongdan = IMG_LoadTexture(renderer, "huongdan.png");
     danthuong = IMG_LoadTexture(renderer, "danthuong.png");
     anhbungno = IMG_LoadTexture(renderer, "anhbungno.png");
+    win = IMG_LoadTexture(renderer, "win.png");
     menu = IMG_LoadTexture(renderer, "anhbungno.png");
     if (!anhbungno) cout << "Khong load anhbungno: " << IMG_GetError() << endl;
 
@@ -110,7 +114,6 @@ void cleanupGraphics()
     for (int i = 0; i < 4; i++) SDL_DestroyTexture(zombieTextures[i]);
     SDL_DestroyTexture(nv_tancong);
     SDL_DestroyTexture(nv_dungyen);
-    SDL_DestroyTexture(nv_chet);
     SDL_DestroyTexture(nen);
     SDL_DestroyTexture(menu);
     SDL_DestroyTexture(thannu);
@@ -120,6 +123,9 @@ void cleanupGraphics()
     SDL_DestroyTexture(danthuong);
     SDL_DestroyTexture(anhbungno);
     SDL_DestroyTexture(nv_tancong);
+    SDL_DestroyTexture(lose);
+    SDL_DestroyTexture(win);
+    SDL_DestroyTexture(huongdan);
     Mix_FreeMusic(nhacnen);
     Mix_FreeChunk(no1);
     Mix_FreeChunk(no2);

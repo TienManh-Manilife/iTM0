@@ -50,13 +50,15 @@ extern SDL_Texture* danthuong;
 
 extern SDL_Texture* anhbungno;
 
-extern SDL_Texture* nv_chet;
-
 extern SDL_Texture* nv_tancong;
 
 extern SDL_Texture* nv_bungno;
 
+extern SDL_Texture* huongdan;
+
 extern SDL_Texture* menu;
+
+extern SDL_Texture* win;
 
 extern SDL_Texture* zombieTextures[5];
 
@@ -67,6 +69,8 @@ extern const int S_W;
 extern const int S_H;
 
 extern const int SP;
+
+extern SDL_Texture* lose;
 
 struct Mouse
 {
