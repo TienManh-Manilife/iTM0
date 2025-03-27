@@ -58,6 +58,12 @@ extern SDL_Texture* nv_bungno;
 
 extern SDL_Texture* menu;
 
+extern SDL_Texture* lose;
+
+extern SDL_Texture* huongdan;
+
+extern SDL_Texture* win;
+
 extern SDL_Texture* zombieTextures[5];
 
 extern bool thoigian1, thoigian2, phat_tancong1;
