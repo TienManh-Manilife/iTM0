@@ -58,6 +58,13 @@ extern SDL_Texture* huongdan;
 
 extern SDL_Texture* menu;
 
+<<<<<<< HEAD
+=======
+extern SDL_Texture* lose;
+
+extern SDL_Texture* huongdan;
+
+>>>>>>> master
 extern SDL_Texture* win;
 
 extern SDL_Texture* zombieTextures[5];

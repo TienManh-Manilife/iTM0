@@ -8,7 +8,11 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
+<<<<<<< HEAD
 1743047412 source:d:\file codeblock\itm0\main.cpp
+=======
+1743049932 source:d:\file codeblock\itm0\main.cpp
+>>>>>>> master
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -33,7 +37,11 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
+<<<<<<< HEAD
 1743048090 source:d:\file codeblock\itm0\graphics.cpp
+=======
+1743049932 source:d:\file codeblock\itm0\graphics.cpp
+>>>>>>> master
 	"graphics.h"
 	<iostream>
 	<SDL2/SDL_mixer.h>
@@ -41,14 +49,22 @@
 	<SDL2/SDL_ttf.h>
 	"move.h"
 
+<<<<<<< HEAD
 1743046948 d:\file codeblock\itm0\graphics.h
+=======
+1743049932 d:\file codeblock\itm0\graphics.h
+>>>>>>> master
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
 
 1742317477 source:d:\file codeblock\itm0\musics.cpp
 
+<<<<<<< HEAD
 1743044726 source:d:\file codeblock\itm0\move.cpp
+=======
+1743049337 source:d:\file codeblock\itm0\move.cpp
+>>>>>>> master
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -58,7 +74,11 @@
 	"graphics.h"
 	"move.h"
 
+<<<<<<< HEAD
 1743044727 d:\file codeblock\itm0\move.h
+=======
+1743049337 d:\file codeblock\itm0\move.h
+>>>>>>> master
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>

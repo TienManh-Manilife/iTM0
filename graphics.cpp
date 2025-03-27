@@ -26,6 +26,11 @@ using namespace std;
     SDL_Texture* danbungno = nullptr;
     SDL_Texture* danthuong = nullptr;
     SDL_Texture* anhbungno = nullptr;
+<<<<<<< HEAD
+=======
+    SDL_Texture* lose = nullptr;
+    SDL_Texture* huongdan = nullptr;
+>>>>>>> master
     SDL_Texture* win = nullptr;
     Mix_Music* nhacnen = nullptr;
     SDL_Texture* thannu = nullptr;
@@ -102,6 +107,10 @@ bool initGraphics()
     anhbungno = IMG_LoadTexture(renderer, "anhbungno.png");
     win = IMG_LoadTexture(renderer, "win.png");
     menu = IMG_LoadTexture(renderer, "anhbungno.png");
+    win = IMG_LoadTexture(renderer, "win.png");
+    lose = IMG_LoadTexture(renderer, "lose.png");
+    huongdan = IMG_LoadTexture(renderer, "huongdan.png");
+
     if (!anhbungno) cout << "Khong load anhbungno: " << IMG_GetError() << endl;
 
     SDL_QueryTexture(nen, NULL, NULL, &nen_w, &nen_h);
