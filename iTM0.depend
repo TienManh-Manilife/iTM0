@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1742143817 source:d:\file codeblock\itm0\dichuyen.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1742137517 d:\file codeblock\itm0\dichuyen.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1743002606 source:d:\file codeblock\itm0\main.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<vector>
+	<cstdlib>
+	<ctime>
+	"graphics.h"
+	"move.h"
+
+1742024328 source:d:\file codeblock\itm0\dich.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"dichuyen.h"
+	"Dich.h"
+
+1742024325 d:\file codeblock\itm0\dich.h
+
+1742143821 source:d:\file codeblock\itm0\khoitao.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1743002323 source:d:\file codeblock\itm0\graphics.cpp
+	"graphics.h"
+	<iostream>
+	<SDL2/SDL_mixer.h>
+	<vector>
+	<SDL2/SDL_ttf.h>
+	"move.h"
+
+1743002324 d:\file codeblock\itm0\graphics.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+
+1742317477 source:d:\file codeblock\itm0\musics.cpp
+
+1743002326 source:d:\file codeblock\itm0\move.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<SDL2/SDL_ttf.h>
+	<vector>
+	"graphics.h"
+	"move.h"
+
+1743002606 d:\file codeblock\itm0\move.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
+	<SDL2/SDL_ttf.h>
+
+1742317480 d:\file codeblock\itm0\musics.h
+
+1742554738 source:d:\file codeblock\itm0\ketqua.cpp
+

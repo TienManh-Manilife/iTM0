@@ -1,0 +1,19 @@
+* Các dòng code: 
+- Tham khảo một số hàm lấy thời gian, phát âm thanh ở trên mạng.
+- Hầu hết code là tự viết. Những code tham khảo Chat GPT thì đã được kí hiệu là tham khảo ở ngay trong code.
+
+* Nguồn ảnh:
+- Nhân vật: https://craftpix.net/product/bestial-anime-characters-pixel-art-sprite-pack/
+- Zombie + Nền: Lấy từ game Plants vs Zombies
+https://www.spriters-resource.com/ds_dsi/pvszds/sheet/155106/
+https://www.spriters-resource.com/fullview/138563/
+- Đạn và các vòng phép:
++ https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fthaona25809%2Fv%25C3%25B2ng-tr%25C3%25B2n-ma-thu%25E1%25BA%25ADt%2F&psig=AOvVaw0FwBHb5ndSA2yReyhYyBYD&ust=1743086725371000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKi3pJv-p4wDFQAAAAAdAAAAABAE
++ https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fvn.lovepik.com%2Fimage-380088047%2Fmagic-array-magic-matrix.html&psig=AOvVaw2uurGB86ZYaamlvrMh0_CP&ust=1743086977667000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKimjJT_p4wDFQAAAAAdAAAAABAE
+
+- Ảnh màn hình chính bấm vào Play: Tự mình ghép ảnh trên Canva
+
+* Nguồn âm thanh:
+- Nhạc nền + Âm thanh của zombies: Lấy từ game Plants vs Zombies
+- Âm thanh khi bắn đạn: (Âm thanh nhảy qua trong Mario) https://tiengdong.com/am-thanh-nhay-qua-buoc-qua
+- Âm thanh nhân vật nói khi dùng chiêu bùng nổ: Lồng tiếng của nhân vật Emilie (Trong Genshin Impact)
