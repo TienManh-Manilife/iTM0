@@ -181,7 +181,7 @@ void hanhdongnhanvat ()
     else trangthai = 0;
         break;
 
-        //Tan cong ________________________________________________________________________________________________________________
+        //Tan cong
     case 4:
         if(phat_tancong1)
         {
