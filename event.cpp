@@ -7,6 +7,7 @@
 #include <ctime>
 #include "graphics.h"
 #include "move.h"
+#include "event.h"
 
 using namespace std;
 
@@ -81,6 +82,7 @@ void chay_lose()
             SDL_RenderCopy(renderer, lose, NULL, NULL);
             SDL_RenderPresent(renderer);
             if (mouse.x !=0 && mouse.y !=0) run = 0;
+            SDL_Delay(5000);
 }
 
 void chay_huongdan()
@@ -97,7 +99,7 @@ void chay_huongdan()
     }
     SDL_RenderCopy(renderer, huongdan, NULL, NULL);
     SDL_RenderPresent(renderer);
-    if (mouse.x != 0) play = 0;
+    if (mouse.x != 0) play = 5;
 }
 
 void chay_win()
@@ -116,6 +118,44 @@ void chay_win()
     SDL_RenderCopy(renderer, win, NULL, NULL);
     SDL_RenderPresent(renderer);
     if (mouse.x !=0 && mouse.y !=0) run = 0;
+    SDL_Delay(5000);
+}
+
+void chondokho()
+{
+    mouse.x = 500;
+    mouse.y = 500;
+    while(SDL_PollEvent(&event))
+    {
+        if (event.type == SDL_QUIT) run = 0;
+        if (event.type == SDL_MOUSEBUTTONDOWN)
+        {
+            mouse.x = event.button.x;
+            mouse.y = event.button.y;
+        }
+    }
+    SDL_RenderCopy(renderer, dokho, NULL, NULL);
+    SDL_RenderPresent(renderer);
+    if (mouse.x <= 400 && mouse.y <= 225)
+    {
+        MAX = 150;
+        play = 0;
+    }
+    else if (mouse.x >= 640 && mouse.y <= 225)
+    {
+        MAX = 300;
+        play = 0;
+    }
+    else if (mouse.x <= 400 && mouse.y >= 555)
+    {
+        MAX = 500;
+        play = 0;
+    }
+    else if (mouse.x >= 640 && mouse.y >= 555)
+    {
+        MAX = 1000;
+        play = 0;
+    }
 }
 
 void game()
@@ -137,7 +177,6 @@ void game()
         {
             chay_menu();
         }
-
         //Bat dau choi
         else if (play == 0)
         {
@@ -162,11 +201,22 @@ void game()
             chay_win();
         }
 
-        if (KILL >= 1000) play = 4;
+        //chon do kho
+        else if (play == 5)
+        {
+            chondokho();
+        }
+
+        if (KILL >= MAX) play = 4;
+        else isPlay = 1;
     }
 
     // Giải phóng bộ nhớ:
     cleanupGraphics();
 
     cout << "Ban da giet duoc: " << KILL;
+    cout << "\n";
+    cout << "\n";
+    cout << "\n";
+    cout << "\n";
 }

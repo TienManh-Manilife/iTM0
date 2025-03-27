@@ -7,6 +7,7 @@
 #include <vector>
 #include "graphics.h"
 #include "move.h"
+#include "event.h"
 
 using namespace std;
 
@@ -58,10 +59,10 @@ void capnhattrangthai (SDL_Event &event, int &trangthai, bool &run)
         {
             trangthai = 3; // Bung no
         }
-        else if (event.key.keysym.sym == SDLK_e && nangcap >= 100)
+        else if (event.key.keysym.sym == SDLK_e && nangcap >= 50)
         {
             trangthai = 5;
-            nangcap -= 100;
+            nangcap -= 50;
         }
         else trangthai = 0;
         break;
@@ -236,7 +237,7 @@ void hanhdongnhanvat ()
         {
             trangthai = 0;
             thoigian1 = 1;
-            damage_add = damage_add + 6;
+            damage_add = damage_add + 3;
         }
         if (SDL_GetTicks() - time0 >= 100)
         {
@@ -259,7 +260,6 @@ void hanhdongnhanvat ()
 }
 
 
-// Code ben duoi tham khao CHAT GPT
 void spawnZombie()
 {
     int type = rand() % 5;

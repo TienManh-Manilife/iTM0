@@ -40,11 +40,15 @@ extern Mix_Chunk* tancong1;
 
 extern int thutuno;
 
+extern bool isPlay;
+
 extern SDL_Texture* zombie_nhayxa;
 
 extern SDL_Texture* thannu;
 
 extern SDL_Texture* danbungno;
+
+extern SDL_Texture* dokho;
 
 extern SDL_Texture* danthuong;
 
@@ -99,6 +103,8 @@ extern SDL_Rect rect_dan;
 extern bool run;
 
 extern int spawnTimer;
+
+extern int MAX;
 
 extern SDL_Event event;
 

@@ -5,6 +5,7 @@
 #include <vector>
 #include <SDL2/SDL_ttf.h>
 #include "move.h"
+#include "event.h"
 
 using namespace std;
 
@@ -27,6 +28,7 @@ using namespace std;
     SDL_Texture* danthuong = nullptr;
     SDL_Texture* anhbungno = nullptr;
     SDL_Texture* win = nullptr;
+    SDL_Texture* dokho = nullptr;
     Mix_Music* nhacnen = nullptr;
     SDL_Texture* thannu = nullptr;
     Mix_Chunk* no1 = nullptr;
@@ -40,8 +42,8 @@ using namespace std;
     const int S_H = 780;
     const int SP = 70;
     Uint32 time0 = 0, time1 = 0, time2 = 0;
-    bool bool_time1 = 1;
-    int play = 1;
+    bool bool_time1 = 1, isPlay = 1;
+    int play = 1, MAX = 100;
     bool phat_no1 = 1, run = 1;
     bool phat_tancong1 = 1;
     bool thoigian1 = 1, thoigian2 = 1;
@@ -106,7 +108,7 @@ bool initGraphics()
     menu = IMG_LoadTexture(renderer, "anhbungno.png");
     win = IMG_LoadTexture(renderer, "win.png");
     lose = IMG_LoadTexture(renderer, "lose.png");
-    huongdan = IMG_LoadTexture(renderer, "huongdan.png");
+    dokho = IMG_LoadTexture(renderer, "dokho.png");
 
     if (!anhbungno) cout << "Khong load anhbungno: " << IMG_GetError() << endl;
 
@@ -132,6 +134,7 @@ void cleanupGraphics()
     SDL_DestroyTexture(lose);
     SDL_DestroyTexture(win);
     SDL_DestroyTexture(huongdan);
+    SDL_DestroyTexture(dokho);
     Mix_FreeMusic(nhacnen);
     Mix_FreeChunk(no1);
     Mix_FreeChunk(no2);

@@ -30,7 +30,6 @@ extern Uint32 time_zb;
 extern int ZOMBIE_SPEED, ZOMBIE_SPEED_ADD;
 
 
-// Code ben duoi tham khao CHAT GPT
 class Zombie
 {
 public:
@@ -76,7 +75,7 @@ private:
             case 0: return 1 + hp/100;
             case 1: return 2 + 1.2*hp/100;
             case 2: return 3 + 1.5*hp/100;
-            case 3: return 4 + 8*hp/100;
+            case 3: return 4 + 1.8*hp/100;
             case 4: return 5 + 2*hp/100;
             default: return 4 + 5*hp/100;
         }
