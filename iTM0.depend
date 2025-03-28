@@ -10,7 +10,7 @@
 
 1743049337 D
 
-1743057494 source:d:\file codeblock\itm0\main.cpp
+1743095450 source:d:\file codeblock\itm0\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -84,7 +84,7 @@
 
 1742317477 source:d:\file codeblock\itm0\musics.cpp
 
-1743094249 source:d:\file codeblock\itm0\move.cpp
+1743095448 source:d:\file codeblock\itm0\move.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -95,7 +95,7 @@
 	"move.h"
 	"event.h"
 
-1743091197 d:\file codeblock\itm0\move.h
+1743095450 d:\file codeblock\itm0\move.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -105,7 +105,7 @@
 
 1742554738 source:d:\file codeblock\itm0\ketqua.cpp
 
-1743094817 source:d:\file codeblock\itm0\event.cpp
+1743094970 source:d:\file codeblock\itm0\event.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
