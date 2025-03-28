@@ -328,7 +328,7 @@ void updateZombies()
 
     for (int i = zombies.size() - 1; i >= 0; i--)
     {
-        if (zombies[i]->rect.x == 143 || zombies[i]->rect.x == 142 || zombies[i]->rect.x == 141 || zombies[i]->rect.x == 140)
+        if (zombies[i]->rect.x == 138 || zombies[i]->rect.x == 137 || zombies[i]->rect.x == 136 || zombies[i]->rect.x == 135)
         {
             play = 2;
             break;

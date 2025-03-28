@@ -57,6 +57,7 @@ void batdauchoi()
 
         SDL_RenderPresent(renderer);
 
+
         if (SDL_GetTicks() - time2 >= 100)
         {
             damage ++;
