@@ -1,15 +1,16 @@
-1. Khi chạy chương trình sẽ xuất hiện màn hính chính. Ấn Play sẽ bắt đầu chơi game.
+1. Khi chạy chương trình sẽ xuất hiện màn hình chính. Ấn Play sẽ bắt đầu chơi game. Sau đó chọn độ khó.
 
-2. Muốn tấn công thường: Ấn chuột trái.
-Nhân vật chỉ được di chuyển lên/xuống nên cần nhấn w/s
-<Đảm bảo rằng bàn phím ở ngôn ngữ tiếng Anh, nếu bàn phím tiếng Việt thì nhân vật không di chuyển>
+2. Tấn công thường: Ấn chuột trái.
+Di chuyển lên: ấn W
+Di chuyển xuống: ấn S
+<Đảm bảo rằng bàn phím ở phương thức English>
 
-3. Kỹ năng bùng nổ là kỹ năng cực mạnh so với tấn công thường, được tích lũy sử dụng 1 lần mỗi khi tiêu diệt được 10 zombies. Có khả năng cộng dồn nếu như không sử dụng.
-Muốn sử dụng, ấn SPACE.
-Khi góc trên bên trái màn hình xuất hiện hình ảnh một vị thần nhỏ nhỏ thì được dùng kỹ năng nộ (Tức là đã tích lũy tiêu diệt 10 quái). Dùng xong sẽ biến mất. Nếu dùng xong vẫn còn xuất hiện tức là người chơi đã tích lũy nhiều lần sử dụng.
+3. Kỹ năng bùng nổ là kỹ năng cực mạnh so với tấn công thường, được tích lũy sử dụng 1 lần mỗi khi tiêu diệt được 15 zombies. Có khả năng cộng dồn nếu như không sử dụng.
+Khi GÓC TRÊN BÊN TRÁI màn hình xuất hiện hình ảnh nhỏ thì được dùng kỹ năng bùng nổ (Tức là đã tích lũy tiêu diệt 15 quái). 
+Dùng xong sẽ biến mất. Nếu dùng xong vẫn còn xuất hiện tức là người chơi đã tích lũy nhiều lần mà chưa sử dụng.
 Kỹ năng nộ có quỹ đạo di chuyển giống tấn công thường nhưng sát thương và tốc độ sẽ cao hơn.
 
-4. Cùng lúc trên màn hình chỉ được 1 lần tấn công. Khi hết lần tấn công này thì mới được tấn công lần tiếp.
+4. Cùng lúc trên màn hình chỉ được 1 lần tấn công thường hoặc bùng nổ. Khi hết lần tấn công này thì mới được tấn công lần tiếp.
 
 5. Máu của Zombies sẽ tăng theo thời gian.
 
@@ -21,4 +22,4 @@ Kỹ năng nộ có quỹ đạo di chuyển giống tấn công thường nhưn
 
 9. Có nhiều loại zombies, mỗi loại sẽ có lượng máu khác nhau nhưng cùng tốc độ di chuyển.
 
-10. Sau một thời gian nhất định (10.000 giây), tốc độ di chuyển của zombies sẽ đột ngột tăng lên gấp 2 lần.
+10. Sau một thời gian nhất định, tốc độ di chuyển của zombies sẽ đột ngột tăng lên gấp 2 lần.
