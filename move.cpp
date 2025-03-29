@@ -237,7 +237,7 @@ void hanhdongnhanvat ()
         {
             trangthai = 0;
             thoigian1 = 1;
-            damage_add = damage_add + 3;
+            damage_add = damage_add + 2;
         }
         if (SDL_GetTicks() - time0 >= 100)
         {
@@ -328,7 +328,7 @@ void updateZombies()
 
     for (int i = zombies.size() - 1; i >= 0; i--)
     {
-        if (zombies[i]->rect.x == 138 || zombies[i]->rect.x == 137 || zombies[i]->rect.x == 136 || zombies[i]->rect.x == 135)
+        if (zombies[i]->rect.x == 130 || zombies[i]->rect.x == 129 || zombies[i]->rect.x == 128 || zombies[i]->rect.x == 127)
         {
             play = 2;
             break;
