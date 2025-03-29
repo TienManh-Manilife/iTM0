@@ -18,8 +18,8 @@ Có thể thấy ngay khi chơi: Ảnh 6
 Khi đó, chỉ cần bấm SPACE là có thể dùng.
 - Khi số lượng Zombies đạt 50, góc dưới bên trái màn hình sẽ xuất hiện: Ảnh 7
 Khi đó, ấn E sẽ có thể nâng cấp vũ khí, và hình đó sẽ hiện ra giữa màn hình, tức là nâng cấp vũ khí thành công.
-- Nếu thua:
-- Nếu thắng:
+- Nếu thua: Ảnh 8
+- Nếu thắng:Ảnh 9
 c) Cách chơi: Ảnh 2
 Có 5 loại Zombies là: Ảnh 10
 3. Nguồn
