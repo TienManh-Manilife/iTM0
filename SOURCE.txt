@@ -1,7 +1,3 @@
-* Các dòng code: 
-- Tham khảo một số hàm lấy thời gian, phát âm thanh ở trên mạng.
-- Hầu hết code là tự viết. Những code tham khảo Chat GPT thì đã được kí hiệu là tham khảo ở ngay trong code.
-
 * Nguồn ảnh:
 - Nhân vật: https://craftpix.net/product/bestial-anime-characters-pixel-art-sprite-pack/
 - Zombie + Nền: Lấy từ game Plants vs Zombies

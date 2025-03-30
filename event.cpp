@@ -219,5 +219,4 @@ void game()
     cout << "\n";
     cout << "\n";
     cout << "\n";
-    cout << "\n";
 }
