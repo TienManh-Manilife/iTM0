@@ -13,11 +13,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image" />
 					<Add option="-lSDL2_mixer" />
 					<Add option="-lSDL2_ttf" />
+					<Add directory="lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -36,13 +38,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="D:/SDL2-2.30.0/x86_64-w64-mingw32/include" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image" />
 			<Add option="-lSDL2_mixer" />
 			<Add option="-lSDL2_ttf" />
-			<Add directory="D:/SDL2-2.30.0/x86_64-w64-mingw32/lib" />
+			<Add directory="lib" />
 		</Linker>
 		<Unit filename="event.cpp" />
 		<Unit filename="event.h" />
